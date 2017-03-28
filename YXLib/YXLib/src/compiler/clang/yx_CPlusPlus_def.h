@@ -1,0 +1,37 @@
+//
+//  yx_CPlusPlus_def.h
+//  YXLib
+//
+//  Created by Yuxi Liu on 9/8/14.
+//  Copyright (c) 2014 Yuxi Liu. All rights reserved.
+//
+
+#ifndef _YX_CPLUSPLUS_DEF_H_
+#define _YX_CPLUSPLUS_DEF_H_
+
+
+#pragma mark - macro in c++
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*c++ macro*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*defined c++ macro*/
+#if YX_LANGUAGE_CPLUSPLUS
+#  define yx_cplusplus
+#  define yx_cplusplus_start extern "C"{
+#  define yx_cplusplus_end }
+#endif
+
+
+#pragma mark - verify the language is c++
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*verify the c++ language*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#if (YX_LANGUAGE_CPLUSPLUS && YX_LANGUAGE_VERIFY)
+#  ifndef __cplusplus
+#    error "not c++ language"
+#  endif
+#endif
+
+
+#endif

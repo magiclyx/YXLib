@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "_yx_ut_release_obj_context:yx_unittest_unittest.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "*((yx_test_group*)handle)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

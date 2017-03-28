@@ -1,0 +1,25 @@
+//
+//  yx_config_version.h
+//  YXLib
+//
+//  Created by Yuxi Liu on 9/4/14.
+//  Copyright (c) 2014 Yuxi Liu. All rights reserved.
+//
+
+#ifndef _YX_CONFIG_VERSION_H_
+#define _YX_CONFIG_VERSION_H_
+
+#include "yx_config_global.h"
+
+
+#pragma mark - yxlib version
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*yxlib version*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define YX_LIB_VERSION_MAIN     1
+#define YX_LIB_VERSION_SUB      0
+#define YX_LIB_VERSION_RESERVE  1
+
+
+#endif

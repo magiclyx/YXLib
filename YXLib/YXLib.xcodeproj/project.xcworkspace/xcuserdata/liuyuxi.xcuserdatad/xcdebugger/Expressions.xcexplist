@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "_yx_testutility_allocmem_alloc:yx_testcase_core_mempool_global.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "context-&gt;mem_array[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yx_ut_destroy:yx_unittest_unittest.c">
+      </ContextState>
+      <ContextState
+         contextName = "event_calback:tmpMain.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "process">
+            </PersistentString>
+            <PersistentString
+               value = "process2">
+            </PersistentString>
+            <PersistentString
+               value = "*a">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "_yx_testutility_allocmem_test:yx_testcase_core_mempool_global.c">
+      </ContextState>
+      <ContextState
+         contextName = "yx_core_buf_read:yx_core_buf.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "core_buf">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yx_core_buf_write:yx_core_buf.c">
+      </ContextState>
+      <ContextState
+         contextName = "_test_basic_function_:yx_testcase_core_buf.c">
+      </ContextState>
+      <ContextState
+         contextName = "msg_loop:tmpMain.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "*process2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "yx_os_process_closeHandle:yx_macosx_process.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "*process2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "testfork:tmpMain.c">
+      </ContextState>
+      <ContextState
+         contextName = "yx_os_eventdriver_process:yx_macosx_event.c">
+      </ContextState>
+      <ContextState
+         contextName = "main:tmpMain.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "info">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
