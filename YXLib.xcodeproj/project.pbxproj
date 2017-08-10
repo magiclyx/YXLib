@@ -1,0 +1,1408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67BF30E31F3B6E5300763D40 /* yx_config_app.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30D91F3B6E5300763D40 /* yx_config_app.h */; };
+		67BF30E41F3B6E5300763D40 /* yx_config_debug.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DA1F3B6E5300763D40 /* yx_config_debug.h */; };
+		67BF30E51F3B6E5300763D40 /* yx_config_environment.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DB1F3B6E5300763D40 /* yx_config_environment.h */; };
+		67BF30E61F3B6E5300763D40 /* yx_config_global.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DC1F3B6E5300763D40 /* yx_config_global.h */; };
+		67BF30E71F3B6E5300763D40 /* yx_config_hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DD1F3B6E5300763D40 /* yx_config_hash.h */; };
+		67BF30E81F3B6E5300763D40 /* yx_config_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DE1F3B6E5300763D40 /* yx_config_headers.h */; };
+		67BF30E91F3B6E5300763D40 /* yx_config_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DF1F3B6E5300763D40 /* yx_config_lib.h */; };
+		67BF30EA1F3B6E5300763D40 /* yx_config_module.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30E01F3B6E5300763D40 /* yx_config_module.h */; };
+		67BF30EB1F3B6E5300763D40 /* yx_config_std.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30E11F3B6E5300763D40 /* yx_config_std.h */; };
+		67BF30EC1F3B6E5300763D40 /* yx_config_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30E21F3B6E5300763D40 /* yx_config_version.h */; };
+		67BF30F41F3B6E5F00763D40 /* yx_clang_def.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30EF1F3B6E5F00763D40 /* yx_clang_def.h */; };
+		67BF30F51F3B6E5F00763D40 /* yx_CPlusPlus_def.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30F01F3B6E5F00763D40 /* yx_CPlusPlus_def.h */; };
+		67BF30F61F3B6E5F00763D40 /* yx_compiler_global.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30F11F3B6E5F00763D40 /* yx_compiler_global.h */; };
+		67BF30F71F3B6E5F00763D40 /* yx_compiler_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30F21F3B6E5F00763D40 /* yx_compiler_headers.h */; };
+		67BF30F81F3B6E5F00763D40 /* yx_compiler_switcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30F31F3B6E5F00763D40 /* yx_compiler_switcher.h */; };
+		67BF30FC1F3B6E7700763D40 /* yx_datamode_global.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30FA1F3B6E7700763D40 /* yx_datamode_global.h */; };
+		67BF30FD1F3B6E7700763D40 /* yx_datamode_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30FB1F3B6E7700763D40 /* yx_datamode_headers.h */; };
+		67BF31551F3B6EC400763D40 /* yx_macosx_allocator.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31031F3B6EC400763D40 /* yx_macosx_allocator.c */; };
+		67BF31561F3B6EC400763D40 /* yx_macosx_allocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31041F3B6EC400763D40 /* yx_macosx_allocator.h */; };
+		67BF31571F3B6EC400763D40 /* yx_macosx_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31051F3B6EC400763D40 /* yx_macosx_mem.h */; };
+		67BF31581F3B6EC400763D40 /* yx_macosx_atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31071F3B6EC400763D40 /* yx_macosx_atomic.h */; };
+		67BF31591F3B6EC400763D40 /* yx_macosx_basictypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31091F3B6EC400763D40 /* yx_macosx_basictypes.h */; };
+		67BF315A1F3B6EC400763D40 /* yx_macosx_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF310A1F3B6EC400763D40 /* yx_macosx_types.h */; };
+		67BF315B1F3B6EC400763D40 /* yx_macosx_debug.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF310C1F3B6EC400763D40 /* yx_macosx_debug.h */; };
+		67BF315C1F3B6EC400763D40 /* yx_macosx_environment.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF310E1F3B6EC400763D40 /* yx_macosx_environment.c */; };
+		67BF315D1F3B6EC400763D40 /* yx_macosx_environment.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF310F1F3B6EC400763D40 /* yx_macosx_environment.h */; };
+		67BF315E1F3B6EC400763D40 /* yx_macosx_err.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31111F3B6EC400763D40 /* yx_macosx_err.h */; };
+		67BF315F1F3B6EC400763D40 /* yx_macosx_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31131F3B6EC400763D40 /* yx_macosx_event.c */; };
+		67BF31601F3B6EC400763D40 /* yx_macosx_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31141F3B6EC400763D40 /* yx_macosx_event.h */; };
+		67BF31611F3B6EC400763D40 /* yx_macosx_eventinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31151F3B6EC400763D40 /* yx_macosx_eventinfo.h */; };
+		67BF31621F3B6EC400763D40 /* yx_macosx_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31171F3B6EC400763D40 /* yx_macosx_file.h */; };
+		67BF31631F3B6EC400763D40 /* yx_macosx_file_access.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31181F3B6EC400763D40 /* yx_macosx_file_access.c */; };
+		67BF31641F3B6EC400763D40 /* yx_macosx_file_access.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31191F3B6EC400763D40 /* yx_macosx_file_access.h */; };
+		67BF31651F3B6EC400763D40 /* yx_macosx_file_authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF311A1F3B6EC400763D40 /* yx_macosx_file_authorization.h */; };
+		67BF31661F3B6EC400763D40 /* yx_macosx_file_create.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF311B1F3B6EC400763D40 /* yx_macosx_file_create.h */; };
+		67BF31671F3B6EC400763D40 /* yx_macosx_file_def.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF311C1F3B6EC400763D40 /* yx_macosx_file_def.h */; };
+		67BF31681F3B6EC400763D40 /* yx_macosx_file_dir.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF311D1F3B6EC400763D40 /* yx_macosx_file_dir.c */; };
+		67BF31691F3B6EC400763D40 /* yx_macosx_file_dir.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF311E1F3B6EC400763D40 /* yx_macosx_file_dir.h */; };
+		67BF316A1F3B6EC400763D40 /* yx_macosx_file_info.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF311F1F3B6EC400763D40 /* yx_macosx_file_info.h */; };
+		67BF316B1F3B6EC400763D40 /* yx_macosx_file_link.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31201F3B6EC400763D40 /* yx_macosx_file_link.h */; };
+		67BF316C1F3B6EC400763D40 /* yx_macosx_file_path.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31211F3B6EC400763D40 /* yx_macosx_file_path.h */; };
+		67BF316D1F3B6EC400763D40 /* yx_macosx_file_readwrite.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31221F3B6EC400763D40 /* yx_macosx_file_readwrite.h */; };
+		67BF316E1F3B6EC400763D40 /* yx_macosx_file_redirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31231F3B6EC400763D40 /* yx_macosx_file_redirection.h */; };
+		67BF316F1F3B6EC400763D40 /* yx_macosx_memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31251F3B6EC400763D40 /* yx_macosx_memory.h */; };
+		67BF31701F3B6EC400763D40 /* yx_macosx_shmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31261F3B6EC400763D40 /* yx_macosx_shmem.c */; };
+		67BF31711F3B6EC400763D40 /* yx_macosx_shmem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31271F3B6EC400763D40 /* yx_macosx_shmem.h */; };
+		67BF31721F3B6EC400763D40 /* yx_macosx_pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31291F3B6EC400763D40 /* yx_macosx_pipe.c */; };
+		67BF31731F3B6EC400763D40 /* yx_macosx_pipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF312A1F3B6EC400763D40 /* yx_macosx_pipe.h */; };
+		67BF31741F3B6EC400763D40 /* yx_macosx_platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF312C1F3B6EC400763D40 /* yx_macosx_platform.h */; };
+		67BF31751F3B6EC400763D40 /* yx_macosx_process.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF312E1F3B6EC400763D40 /* yx_macosx_process.c */; };
+		67BF31761F3B6EC400763D40 /* yx_macosx_process.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF312F1F3B6EC400763D40 /* yx_macosx_process.h */; };
+		67BF31771F3B6EC400763D40 /* yx_macosx_process_info.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31301F3B6EC400763D40 /* yx_macosx_process_info.c */; };
+		67BF31781F3B6EC400763D40 /* yx_macosx_process_info.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31311F3B6EC400763D40 /* yx_macosx_process_info.h */; };
+		67BF31791F3B6EC400763D40 /* yx_macosx_process_status.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31321F3B6EC400763D40 /* yx_macosx_process_status.c */; };
+		67BF317A1F3B6EC400763D40 /* yx_macosx_process_status.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31331F3B6EC400763D40 /* yx_macosx_process_status.h */; };
+		67BF317B1F3B6EC400763D40 /* yx_macosx_rtti.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31351F3B6EC400763D40 /* yx_macosx_rtti.c */; };
+		67BF317C1F3B6EC400763D40 /* yx_macosx_rtti.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31361F3B6EC400763D40 /* yx_macosx_rtti.h */; };
+		67BF317D1F3B6EC400763D40 /* yx_macosx_rttidef.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31371F3B6EC400763D40 /* yx_macosx_rttidef.h */; };
+		67BF317E1F3B6EC400763D40 /* yx_macosx_token.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31391F3B6EC400763D40 /* yx_macosx_token.h */; };
+		67BF317F1F3B6EC400763D40 /* yx_macosx_char.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF313B1F3B6EC400763D40 /* yx_macosx_char.c */; };
+		67BF31801F3B6EC400763D40 /* yx_macosx_char.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF313C1F3B6EC400763D40 /* yx_macosx_char.h */; };
+		67BF31811F3B6EC400763D40 /* yx_macosx_string.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF313D1F3B6EC400763D40 /* yx_macosx_string.c */; };
+		67BF31821F3B6EC400763D40 /* yx_macosx_string.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF313E1F3B6EC400763D40 /* yx_macosx_string.h */; };
+		67BF31831F3B6EC400763D40 /* yx_macosx_string_base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF313F1F3B6EC400763D40 /* yx_macosx_string_base64.c */; };
+		67BF31841F3B6EC400763D40 /* yx_macosx_string_base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31401F3B6EC400763D40 /* yx_macosx_string_base64.h */; };
+		67BF31851F3B6EC400763D40 /* yx_macosx_string_ext.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31411F3B6EC400763D40 /* yx_macosx_string_ext.c */; };
+		67BF31861F3B6EC400763D40 /* yx_macosx_string_ext.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31421F3B6EC400763D40 /* yx_macosx_string_ext.h */; };
+		67BF31871F3B6EC400763D40 /* yx_macosx_string_http.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31431F3B6EC400763D40 /* yx_macosx_string_http.c */; };
+		67BF31881F3B6EC400763D40 /* yx_macosx_string_http.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31441F3B6EC400763D40 /* yx_macosx_string_http.h */; };
+		67BF31891F3B6EC400763D40 /* yx_macosx_system.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF31461F3B6EC400763D40 /* yx_macosx_system.c */; };
+		67BF318A1F3B6EC400763D40 /* yx_macosx_system.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31471F3B6EC400763D40 /* yx_macosx_system.h */; };
+		67BF318B1F3B6EC400763D40 /* yx_macosx_thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31491F3B6EC400763D40 /* yx_macosx_thread.h */; };
+		67BF318C1F3B6EC400763D40 /* yx_macosx_critime.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF314B1F3B6EC400763D40 /* yx_macosx_critime.c */; };
+		67BF318D1F3B6EC400763D40 /* yx_macosx_critime.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF314C1F3B6EC400763D40 /* yx_macosx_critime.h */; };
+		67BF318E1F3B6EC400763D40 /* yx_macosx_time.c in Sources */ = {isa = PBXBuildFile; fileRef = 67BF314D1F3B6EC400763D40 /* yx_macosx_time.c */; };
+		67BF318F1F3B6EC400763D40 /* yx_macosx_time.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF314E1F3B6EC400763D40 /* yx_macosx_time.h */; };
+		67BF31901F3B6EC400763D40 /* yx_macosx_global.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF314F1F3B6EC400763D40 /* yx_macosx_global.h */; };
+		67BF31911F3B6EC400763D40 /* yx_macosx_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31501F3B6EC400763D40 /* yx_macosx_headers.h */; };
+		67BF31921F3B6EC400763D40 /* yx_macosx_varargs.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31511F3B6EC400763D40 /* yx_macosx_varargs.h */; };
+		67BF31931F3B6EC400763D40 /* yx_os_global.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31521F3B6EC400763D40 /* yx_os_global.h */; };
+		67BF31941F3B6EC400763D40 /* yx_os_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31531F3B6EC400763D40 /* yx_os_headers.h */; };
+		67BF31951F3B6EC400763D40 /* yx_os_platform_switcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF31541F3B6EC400763D40 /* yx_os_platform_switcher.h */; };
+		C268B8991F3C36DF00BC7CD7 /* yx_core_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B80A1F3C36DF00BC7CD7 /* yx_core_mem.h */; };
+		C268B89A1F3C36E000BC7CD7 /* yx_core_mempool_basic.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B80B1F3C36DF00BC7CD7 /* yx_core_mempool_basic.c */; };
+		C268B89B1F3C36E000BC7CD7 /* yx_core_mempool_basic.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B80C1F3C36DF00BC7CD7 /* yx_core_mempool_basic.h */; };
+		C268B89C1F3C36E000BC7CD7 /* yx_core_mempool_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B80D1F3C36DF00BC7CD7 /* yx_core_mempool_buf.c */; };
+		C268B89D1F3C36E000BC7CD7 /* yx_core_mempool_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B80E1F3C36DF00BC7CD7 /* yx_core_mempool_buf.h */; };
+		C268B89E1F3C36E000BC7CD7 /* yx_core_mempool_cell.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B80F1F3C36DF00BC7CD7 /* yx_core_mempool_cell.c */; };
+		C268B89F1F3C36E000BC7CD7 /* yx_core_mempool_cell.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8101F3C36DF00BC7CD7 /* yx_core_mempool_cell.h */; };
+		C268B8A01F3C36E000BC7CD7 /* yx_core_mempool_debug.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8111F3C36DF00BC7CD7 /* yx_core_mempool_debug.c */; };
+		C268B8A11F3C36E000BC7CD7 /* yx_core_mempool_debug.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8121F3C36DF00BC7CD7 /* yx_core_mempool_debug.h */; };
+		C268B8A41F3C36E000BC7CD7 /* yx_core_auto_interface.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8161F3C36DF00BC7CD7 /* yx_core_auto_interface.c */; };
+		C268B8A51F3C36E000BC7CD7 /* yx_core_auto_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8171F3C36DF00BC7CD7 /* yx_core_auto_interface.h */; };
+		C268B8A61F3C36E000BC7CD7 /* yx_core_autoString.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8181F3C36DF00BC7CD7 /* yx_core_autoString.c */; };
+		C268B8A71F3C36E000BC7CD7 /* yx_core_autoString.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8191F3C36DF00BC7CD7 /* yx_core_autoString.h */; };
+		C268B8A81F3C36E000BC7CD7 /* yx_core_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B81B1F3C36DF00BC7CD7 /* yx_core_buf.c */; };
+		C268B8A91F3C36E000BC7CD7 /* yx_core_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B81C1F3C36DF00BC7CD7 /* yx_core_buf.h */; };
+		C268B8AA1F3C36E000BC7CD7 /* yx_core_buf_data.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B81D1F3C36DF00BC7CD7 /* yx_core_buf_data.c */; };
+		C268B8AB1F3C36E000BC7CD7 /* yx_core_buf_data.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B81E1F3C36DF00BC7CD7 /* yx_core_buf_data.h */; };
+		C268B8AC1F3C36E000BC7CD7 /* yx_core_buf_pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B81F1F3C36DF00BC7CD7 /* yx_core_buf_pipe.c */; };
+		C268B8AD1F3C36E000BC7CD7 /* yx_core_buf_pipe.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8201F3C36DF00BC7CD7 /* yx_core_buf_pipe.h */; };
+		C268B8AE1F3C36E000BC7CD7 /* yx_core_buf_private.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8211F3C36DF00BC7CD7 /* yx_core_buf_private.h */; };
+		C268B8AF1F3C36E000BC7CD7 /* yx_core_invbuf.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8221F3C36DF00BC7CD7 /* yx_core_invbuf.c */; };
+		C268B8B01F3C36E000BC7CD7 /* yx_core_invbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8231F3C36DF00BC7CD7 /* yx_core_invbuf.h */; };
+		C268B8B11F3C36E000BC7CD7 /* yx_core_communicator_pipe.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8261F3C36DF00BC7CD7 /* yx_core_communicator_pipe.c */; };
+		C268B8B21F3C36E000BC7CD7 /* yx_core_communicator_pipe.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8271F3C36DF00BC7CD7 /* yx_core_communicator_pipe.h */; };
+		C268B8B31F3C36E000BC7CD7 /* yx_core_communicator.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8281F3C36DF00BC7CD7 /* yx_core_communicator.c */; };
+		C268B8B41F3C36E000BC7CD7 /* yx_core_communicator.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8291F3C36DF00BC7CD7 /* yx_core_communicator.h */; };
+		C268B8B51F3C36E000BC7CD7 /* yx_core_communicator_eventdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B82A1F3C36DF00BC7CD7 /* yx_core_communicator_eventdriver.h */; };
+		C268B8B61F3C36E000BC7CD7 /* yx_core_communicator_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B82B1F3C36DF00BC7CD7 /* yx_core_communicator_interface.h */; };
+		C268B8B71F3C36E000BC7CD7 /* yx_core_communicator_type.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B82C1F3C36DF00BC7CD7 /* yx_core_communicator_type.h */; };
+		C268B8BC1F3C36E000BC7CD7 /* yx_core_container_valfunc.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8331F3C36DF00BC7CD7 /* yx_core_container_valfunc.c */; };
+		C268B8BD1F3C36E000BC7CD7 /* yx_core_container_valfunc.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8341F3C36DF00BC7CD7 /* yx_core_container_valfunc.h */; };
+		C268B8BE1F3C36E000BC7CD7 /* yx_core_dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8351F3C36DF00BC7CD7 /* yx_core_dictionary.c */; };
+		C268B8BF1F3C36E000BC7CD7 /* yx_core_dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8361F3C36DF00BC7CD7 /* yx_core_dictionary.h */; };
+		C268B8C01F3C36E000BC7CD7 /* yx_core_hashPrime.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8371F3C36DF00BC7CD7 /* yx_core_hashPrime.c */; };
+		C268B8C11F3C36E000BC7CD7 /* yx_core_hashPrime.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8381F3C36DF00BC7CD7 /* yx_core_hashPrime.h */; };
+		C268B8C21F3C36E000BC7CD7 /* yx_core_hashtable.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8391F3C36DF00BC7CD7 /* yx_core_hashtable.c */; };
+		C268B8C31F3C36E000BC7CD7 /* yx_core_hashtable.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B83A1F3C36DF00BC7CD7 /* yx_core_hashtable.h */; };
+		C268B8C41F3C36E000BC7CD7 /* yx_core_list.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B83B1F3C36DF00BC7CD7 /* yx_core_list.c */; };
+		C268B8C51F3C36E000BC7CD7 /* yx_core_list.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B83C1F3C36DF00BC7CD7 /* yx_core_list.h */; };
+		C268B8C61F3C36E000BC7CD7 /* yx_core_listnode.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B83D1F3C36DF00BC7CD7 /* yx_core_listnode.c */; };
+		C268B8C71F3C36E000BC7CD7 /* yx_core_listnode.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B83E1F3C36DF00BC7CD7 /* yx_core_listnode.h */; };
+		C268B8C81F3C36E000BC7CD7 /* yx_core_queue.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B83F1F3C36DF00BC7CD7 /* yx_core_queue.c */; };
+		C268B8C91F3C36E000BC7CD7 /* yx_core_queue.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8401F3C36DF00BC7CD7 /* yx_core_queue.h */; };
+		C268B8CA1F3C36E000BC7CD7 /* yx_core_queuenode.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8411F3C36DF00BC7CD7 /* yx_core_queuenode.h */; };
+		C268B8CB1F3C36E000BC7CD7 /* yx_core_rbnode.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8421F3C36DF00BC7CD7 /* yx_core_rbnode.c */; };
+		C268B8CC1F3C36E000BC7CD7 /* yx_core_rbnode.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8431F3C36DF00BC7CD7 /* yx_core_rbnode.h */; };
+		C268B8CD1F3C36E000BC7CD7 /* yx_core_rbtree.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8441F3C36DF00BC7CD7 /* yx_core_rbtree.c */; };
+		C268B8CE1F3C36E000BC7CD7 /* yx_core_rbtree.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8451F3C36DF00BC7CD7 /* yx_core_rbtree.h */; };
+		C268B8CF1F3C36E000BC7CD7 /* yx_core_slistnode.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8461F3C36DF00BC7CD7 /* yx_core_slistnode.h */; };
+		C268B8D01F3C36E000BC7CD7 /* yx_core_stacknode.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8471F3C36DF00BC7CD7 /* yx_core_stacknode.h */; };
+		C268B8D11F3C36E000BC7CD7 /* yx_core_context.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8491F3C36DF00BC7CD7 /* yx_core_context.c */; };
+		C268B8D21F3C36E000BC7CD7 /* yx_core_context.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B84A1F3C36DF00BC7CD7 /* yx_core_context.h */; };
+		C268B8D31F3C36E000BC7CD7 /* yx_core_range.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B84C1F3C36DF00BC7CD7 /* yx_core_range.c */; };
+		C268B8D41F3C36E000BC7CD7 /* yx_core_range.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B84D1F3C36DF00BC7CD7 /* yx_core_range.h */; };
+		C268B8D51F3C36E000BC7CD7 /* yx_core_assert.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B84F1F3C36DF00BC7CD7 /* yx_core_assert.h */; };
+		C268B8E11F3C36E000BC7CD7 /* yx_core_file.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B85E1F3C36DF00BC7CD7 /* yx_core_file.c */; };
+		C268B8E21F3C36E000BC7CD7 /* yx_core_file.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B85F1F3C36DF00BC7CD7 /* yx_core_file.h */; };
+		C268B8E31F3C36E000BC7CD7 /* yx_core_file_scaner.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8601F3C36DF00BC7CD7 /* yx_core_file_scaner.c */; };
+		C268B8E41F3C36E000BC7CD7 /* yx_core_file_scaner.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8611F3C36DF00BC7CD7 /* yx_core_file_scaner.h */; };
+		C268B8E51F3C36E000BC7CD7 /* yx_core_fileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8621F3C36DF00BC7CD7 /* yx_core_fileManager.c */; };
+		C268B8E61F3C36E000BC7CD7 /* yx_core_fileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8631F3C36DF00BC7CD7 /* yx_core_fileManager.h */; };
+		C268B8E71F3C36E000BC7CD7 /* yx_core_hash_cityhash.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8661F3C36DF00BC7CD7 /* yx_core_hash_cityhash.c */; };
+		C268B8E81F3C36E000BC7CD7 /* yx_core_hash_cityhash.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8671F3C36DF00BC7CD7 /* yx_core_hash_cityhash.h */; };
+		C268B8E91F3C36E000BC7CD7 /* yx_core_hash_murmurHash.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8681F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.c */; };
+		C268B8EA1F3C36E000BC7CD7 /* yx_core_hash_murmurHash.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8691F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.h */; };
+		C268B8EB1F3C36E000BC7CD7 /* yx_core_hash_spookyHash.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B86A1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.c */; };
+		C268B8EC1F3C36E000BC7CD7 /* yx_core_hash_spookyHash.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B86B1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.h */; };
+		C268B8ED1F3C36E000BC7CD7 /* yx_core_hash_string.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B86C1F3C36DF00BC7CD7 /* yx_core_hash_string.c */; };
+		C268B8EE1F3C36E000BC7CD7 /* yx_core_hash_string.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B86D1F3C36DF00BC7CD7 /* yx_core_hash_string.h */; };
+		C268B8EF1F3C36E000BC7CD7 /* yx_core_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B86E1F3C36DF00BC7CD7 /* yx_core_hash.c */; };
+		C268B8F01F3C36E000BC7CD7 /* yx_core_hash.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B86F1F3C36DF00BC7CD7 /* yx_core_hash.h */; };
+		C268B8F11F3C36E000BC7CD7 /* yx_core_logger.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8711F3C36DF00BC7CD7 /* yx_core_logger.c */; };
+		C268B8F21F3C36E000BC7CD7 /* yx_core_logger.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8721F3C36DF00BC7CD7 /* yx_core_logger.h */; };
+		C268B8F31F3C36E000BC7CD7 /* yx_core_logger_def.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8731F3C36DF00BC7CD7 /* yx_core_logger_def.c */; };
+		C268B8F41F3C36E000BC7CD7 /* yx_core_logger_def.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8741F3C36DF00BC7CD7 /* yx_core_logger_def.h */; };
+		C268B8F51F3C36E000BC7CD7 /* yx_core_logger_rule.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8751F3C36DF00BC7CD7 /* yx_core_logger_rule.c */; };
+		C268B8F61F3C36E000BC7CD7 /* yx_core_logger_rule.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8761F3C36DF00BC7CD7 /* yx_core_logger_rule.h */; };
+		C268B8F71F3C36E000BC7CD7 /* yx_core_logger_utility.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8771F3C36DF00BC7CD7 /* yx_core_logger_utility.h */; };
+		C268B8F81F3C36E000BC7CD7 /* yx_core_random.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8791F3C36DF00BC7CD7 /* yx_core_random.c */; };
+		C268B8F91F3C36E000BC7CD7 /* yx_core_random.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B87A1F3C36DF00BC7CD7 /* yx_core_random.h */; };
+		C268B8FA1F3C36E000BC7CD7 /* yx_core_module.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B87C1F3C36DF00BC7CD7 /* yx_core_module.c */; };
+		C268B8FB1F3C36E000BC7CD7 /* yx_core_module.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B87D1F3C36DF00BC7CD7 /* yx_core_module.h */; };
+		C268B8FC1F3C36E000BC7CD7 /* yx_core_moduleManager.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B87E1F3C36DF00BC7CD7 /* yx_core_moduleManager.c */; };
+		C268B8FD1F3C36E000BC7CD7 /* yx_core_moduleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B87F1F3C36DF00BC7CD7 /* yx_core_moduleManager.h */; };
+		C268B8FE1F3C36E000BC7CD7 /* yx_core_rootmodule.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8801F3C36DF00BC7CD7 /* yx_core_rootmodule.c */; };
+		C268B8FF1F3C36E000BC7CD7 /* yx_core_rootmodule.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8811F3C36DF00BC7CD7 /* yx_core_rootmodule.h */; };
+		C268B9001F3C36E000BC7CD7 /* yx_core_object.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8831F3C36DF00BC7CD7 /* yx_core_object.c */; };
+		C268B9011F3C36E000BC7CD7 /* yx_core_object.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8841F3C36DF00BC7CD7 /* yx_core_object.h */; };
+		C268B9021F3C36E000BC7CD7 /* yx_core_childprocmanager.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8861F3C36DF00BC7CD7 /* yx_core_childprocmanager.c */; };
+		C268B9031F3C36E000BC7CD7 /* yx_core_childprocmanager.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8871F3C36DF00BC7CD7 /* yx_core_childprocmanager.h */; };
+		C268B9041F3C36E000BC7CD7 /* yx_core_process.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8881F3C36DF00BC7CD7 /* yx_core_process.c */; };
+		C268B9051F3C36E000BC7CD7 /* yx_core_process.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8891F3C36DF00BC7CD7 /* yx_core_process.h */; };
+		C268B9061F3C36E000BC7CD7 /* yx_core_rttidef.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B88B1F3C36DF00BC7CD7 /* yx_core_rttidef.c */; };
+		C268B9071F3C36E000BC7CD7 /* yx_core_rttidef.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B88C1F3C36DF00BC7CD7 /* yx_core_rttidef.h */; };
+		C268B9081F3C36E000BC7CD7 /* yx_core_cstring.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B88E1F3C36DF00BC7CD7 /* yx_core_cstring.c */; };
+		C268B9091F3C36E000BC7CD7 /* yx_core_cstring.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B88F1F3C36DF00BC7CD7 /* yx_core_cstring.h */; };
+		C268B90A1F3C36E000BC7CD7 /* yx_core_refstring.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8901F3C36DF00BC7CD7 /* yx_core_refstring.c */; };
+		C268B90B1F3C36E000BC7CD7 /* yx_core_refstring.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8911F3C36DF00BC7CD7 /* yx_core_refstring.h */; };
+		C268B90C1F3C36E000BC7CD7 /* yx_core_string.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8921F3C36DF00BC7CD7 /* yx_core_string.h */; };
+		C268B90D1F3C36E000BC7CD7 /* yx_core_string_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8931F3C36DF00BC7CD7 /* yx_core_string_buf.h */; };
+		C268B90E1F3C36E000BC7CD7 /* yx_core_bit.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8941F3C36DF00BC7CD7 /* yx_core_bit.h */; };
+		C268B90F1F3C36E000BC7CD7 /* yx_core_global.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8951F3C36DF00BC7CD7 /* yx_core_global.h */; };
+		C268B9101F3C36E000BC7CD7 /* yx_core_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8961F3C36DF00BC7CD7 /* yx_core_headers.h */; };
+		C268B9111F3C36E000BC7CD7 /* yx_core_init.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B8971F3C36DF00BC7CD7 /* yx_core_init.c */; };
+		C268B9121F3C36E000BC7CD7 /* yx_core_init.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B8981F3C36DF00BC7CD7 /* yx_core_init.h */; };
+		C268B91D1F3C374F00BC7CD7 /* yx_unittest_global.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B9141F3C374F00BC7CD7 /* yx_unittest_global.h */; };
+		C268B91E1F3C375000BC7CD7 /* yx_unittest_headers.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B9151F3C374F00BC7CD7 /* yx_unittest_headers.h */; };
+		C268B91F1F3C375000BC7CD7 /* yx_unittest_list.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B9161F3C374F00BC7CD7 /* yx_unittest_list.c */; };
+		C268B9201F3C375000BC7CD7 /* yx_unittest_list.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B9171F3C374F00BC7CD7 /* yx_unittest_list.h */; };
+		C268B9211F3C375000BC7CD7 /* yx_unittest_mempool.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B9181F3C374F00BC7CD7 /* yx_unittest_mempool.c */; };
+		C268B9221F3C375000BC7CD7 /* yx_unittest_mempool.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B9191F3C374F00BC7CD7 /* yx_unittest_mempool.h */; };
+		C268B9231F3C375000BC7CD7 /* yx_unittest_rttidef.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B91A1F3C374F00BC7CD7 /* yx_unittest_rttidef.h */; };
+		C268B9241F3C375000BC7CD7 /* yx_unittest_unittest.c in Sources */ = {isa = PBXBuildFile; fileRef = C268B91B1F3C374F00BC7CD7 /* yx_unittest_unittest.c */; };
+		C268B9251F3C375000BC7CD7 /* yx_unittest_unittest.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B91C1F3C374F00BC7CD7 /* yx_unittest_unittest.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		678E83391F3B6D3000FBFEED /* libYXLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYXLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		67BF30D91F3B6E5300763D40 /* yx_config_app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_app.h; sourceTree = "<group>"; };
+		67BF30DA1F3B6E5300763D40 /* yx_config_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_debug.h; sourceTree = "<group>"; };
+		67BF30DB1F3B6E5300763D40 /* yx_config_environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_environment.h; sourceTree = "<group>"; };
+		67BF30DC1F3B6E5300763D40 /* yx_config_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_global.h; sourceTree = "<group>"; };
+		67BF30DD1F3B6E5300763D40 /* yx_config_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_hash.h; sourceTree = "<group>"; };
+		67BF30DE1F3B6E5300763D40 /* yx_config_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_headers.h; sourceTree = "<group>"; };
+		67BF30DF1F3B6E5300763D40 /* yx_config_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_lib.h; sourceTree = "<group>"; };
+		67BF30E01F3B6E5300763D40 /* yx_config_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_module.h; sourceTree = "<group>"; };
+		67BF30E11F3B6E5300763D40 /* yx_config_std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_std.h; sourceTree = "<group>"; };
+		67BF30E21F3B6E5300763D40 /* yx_config_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_version.h; sourceTree = "<group>"; };
+		67BF30EF1F3B6E5F00763D40 /* yx_clang_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_clang_def.h; sourceTree = "<group>"; };
+		67BF30F01F3B6E5F00763D40 /* yx_CPlusPlus_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_CPlusPlus_def.h; sourceTree = "<group>"; };
+		67BF30F11F3B6E5F00763D40 /* yx_compiler_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_compiler_global.h; sourceTree = "<group>"; };
+		67BF30F21F3B6E5F00763D40 /* yx_compiler_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_compiler_headers.h; sourceTree = "<group>"; };
+		67BF30F31F3B6E5F00763D40 /* yx_compiler_switcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_compiler_switcher.h; sourceTree = "<group>"; };
+		67BF30FA1F3B6E7700763D40 /* yx_datamode_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_datamode_global.h; sourceTree = "<group>"; };
+		67BF30FB1F3B6E7700763D40 /* yx_datamode_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_datamode_headers.h; sourceTree = "<group>"; };
+		67BF31031F3B6EC400763D40 /* yx_macosx_allocator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_allocator.c; sourceTree = "<group>"; };
+		67BF31041F3B6EC400763D40 /* yx_macosx_allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_allocator.h; sourceTree = "<group>"; };
+		67BF31051F3B6EC400763D40 /* yx_macosx_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_mem.h; sourceTree = "<group>"; };
+		67BF31071F3B6EC400763D40 /* yx_macosx_atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_atomic.h; sourceTree = "<group>"; };
+		67BF31091F3B6EC400763D40 /* yx_macosx_basictypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_basictypes.h; sourceTree = "<group>"; };
+		67BF310A1F3B6EC400763D40 /* yx_macosx_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_types.h; sourceTree = "<group>"; };
+		67BF310C1F3B6EC400763D40 /* yx_macosx_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_debug.h; sourceTree = "<group>"; };
+		67BF310E1F3B6EC400763D40 /* yx_macosx_environment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_environment.c; sourceTree = "<group>"; };
+		67BF310F1F3B6EC400763D40 /* yx_macosx_environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_environment.h; sourceTree = "<group>"; };
+		67BF31111F3B6EC400763D40 /* yx_macosx_err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_err.h; sourceTree = "<group>"; };
+		67BF31131F3B6EC400763D40 /* yx_macosx_event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_event.c; sourceTree = "<group>"; };
+		67BF31141F3B6EC400763D40 /* yx_macosx_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_event.h; sourceTree = "<group>"; };
+		67BF31151F3B6EC400763D40 /* yx_macosx_eventinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_eventinfo.h; sourceTree = "<group>"; };
+		67BF31171F3B6EC400763D40 /* yx_macosx_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file.h; sourceTree = "<group>"; };
+		67BF31181F3B6EC400763D40 /* yx_macosx_file_access.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_file_access.c; sourceTree = "<group>"; };
+		67BF31191F3B6EC400763D40 /* yx_macosx_file_access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_access.h; sourceTree = "<group>"; };
+		67BF311A1F3B6EC400763D40 /* yx_macosx_file_authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_authorization.h; sourceTree = "<group>"; };
+		67BF311B1F3B6EC400763D40 /* yx_macosx_file_create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_create.h; sourceTree = "<group>"; };
+		67BF311C1F3B6EC400763D40 /* yx_macosx_file_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_def.h; sourceTree = "<group>"; };
+		67BF311D1F3B6EC400763D40 /* yx_macosx_file_dir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_file_dir.c; sourceTree = "<group>"; };
+		67BF311E1F3B6EC400763D40 /* yx_macosx_file_dir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_dir.h; sourceTree = "<group>"; };
+		67BF311F1F3B6EC400763D40 /* yx_macosx_file_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_info.h; sourceTree = "<group>"; };
+		67BF31201F3B6EC400763D40 /* yx_macosx_file_link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_link.h; sourceTree = "<group>"; };
+		67BF31211F3B6EC400763D40 /* yx_macosx_file_path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_path.h; sourceTree = "<group>"; };
+		67BF31221F3B6EC400763D40 /* yx_macosx_file_readwrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_readwrite.h; sourceTree = "<group>"; };
+		67BF31231F3B6EC400763D40 /* yx_macosx_file_redirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_file_redirection.h; sourceTree = "<group>"; };
+		67BF31251F3B6EC400763D40 /* yx_macosx_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_memory.h; sourceTree = "<group>"; };
+		67BF31261F3B6EC400763D40 /* yx_macosx_shmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_shmem.c; sourceTree = "<group>"; };
+		67BF31271F3B6EC400763D40 /* yx_macosx_shmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_shmem.h; sourceTree = "<group>"; };
+		67BF31291F3B6EC400763D40 /* yx_macosx_pipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_pipe.c; sourceTree = "<group>"; };
+		67BF312A1F3B6EC400763D40 /* yx_macosx_pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_pipe.h; sourceTree = "<group>"; };
+		67BF312C1F3B6EC400763D40 /* yx_macosx_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_platform.h; sourceTree = "<group>"; };
+		67BF312E1F3B6EC400763D40 /* yx_macosx_process.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_process.c; sourceTree = "<group>"; };
+		67BF312F1F3B6EC400763D40 /* yx_macosx_process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_process.h; sourceTree = "<group>"; };
+		67BF31301F3B6EC400763D40 /* yx_macosx_process_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_process_info.c; sourceTree = "<group>"; };
+		67BF31311F3B6EC400763D40 /* yx_macosx_process_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_process_info.h; sourceTree = "<group>"; };
+		67BF31321F3B6EC400763D40 /* yx_macosx_process_status.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_process_status.c; sourceTree = "<group>"; };
+		67BF31331F3B6EC400763D40 /* yx_macosx_process_status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_process_status.h; sourceTree = "<group>"; };
+		67BF31351F3B6EC400763D40 /* yx_macosx_rtti.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_rtti.c; sourceTree = "<group>"; };
+		67BF31361F3B6EC400763D40 /* yx_macosx_rtti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_rtti.h; sourceTree = "<group>"; };
+		67BF31371F3B6EC400763D40 /* yx_macosx_rttidef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_rttidef.h; sourceTree = "<group>"; };
+		67BF31391F3B6EC400763D40 /* yx_macosx_token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_token.h; sourceTree = "<group>"; };
+		67BF313B1F3B6EC400763D40 /* yx_macosx_char.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_char.c; sourceTree = "<group>"; };
+		67BF313C1F3B6EC400763D40 /* yx_macosx_char.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_char.h; sourceTree = "<group>"; };
+		67BF313D1F3B6EC400763D40 /* yx_macosx_string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_string.c; sourceTree = "<group>"; };
+		67BF313E1F3B6EC400763D40 /* yx_macosx_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_string.h; sourceTree = "<group>"; };
+		67BF313F1F3B6EC400763D40 /* yx_macosx_string_base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_string_base64.c; sourceTree = "<group>"; };
+		67BF31401F3B6EC400763D40 /* yx_macosx_string_base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_string_base64.h; sourceTree = "<group>"; };
+		67BF31411F3B6EC400763D40 /* yx_macosx_string_ext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_string_ext.c; sourceTree = "<group>"; };
+		67BF31421F3B6EC400763D40 /* yx_macosx_string_ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_string_ext.h; sourceTree = "<group>"; };
+		67BF31431F3B6EC400763D40 /* yx_macosx_string_http.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_string_http.c; sourceTree = "<group>"; };
+		67BF31441F3B6EC400763D40 /* yx_macosx_string_http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_string_http.h; sourceTree = "<group>"; };
+		67BF31461F3B6EC400763D40 /* yx_macosx_system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_system.c; sourceTree = "<group>"; };
+		67BF31471F3B6EC400763D40 /* yx_macosx_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_system.h; sourceTree = "<group>"; };
+		67BF31491F3B6EC400763D40 /* yx_macosx_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_thread.h; sourceTree = "<group>"; };
+		67BF314B1F3B6EC400763D40 /* yx_macosx_critime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_critime.c; sourceTree = "<group>"; };
+		67BF314C1F3B6EC400763D40 /* yx_macosx_critime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_critime.h; sourceTree = "<group>"; };
+		67BF314D1F3B6EC400763D40 /* yx_macosx_time.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_time.c; sourceTree = "<group>"; };
+		67BF314E1F3B6EC400763D40 /* yx_macosx_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_time.h; sourceTree = "<group>"; };
+		67BF314F1F3B6EC400763D40 /* yx_macosx_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_global.h; sourceTree = "<group>"; };
+		67BF31501F3B6EC400763D40 /* yx_macosx_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_headers.h; sourceTree = "<group>"; };
+		67BF31511F3B6EC400763D40 /* yx_macosx_varargs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_varargs.h; sourceTree = "<group>"; };
+		67BF31521F3B6EC400763D40 /* yx_os_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_os_global.h; sourceTree = "<group>"; };
+		67BF31531F3B6EC400763D40 /* yx_os_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_os_headers.h; sourceTree = "<group>"; };
+		67BF31541F3B6EC400763D40 /* yx_os_platform_switcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_os_platform_switcher.h; sourceTree = "<group>"; };
+		C268B80A1F3C36DF00BC7CD7 /* yx_core_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_mem.h; sourceTree = "<group>"; };
+		C268B80B1F3C36DF00BC7CD7 /* yx_core_mempool_basic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_mempool_basic.c; sourceTree = "<group>"; };
+		C268B80C1F3C36DF00BC7CD7 /* yx_core_mempool_basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_mempool_basic.h; sourceTree = "<group>"; };
+		C268B80D1F3C36DF00BC7CD7 /* yx_core_mempool_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_mempool_buf.c; sourceTree = "<group>"; };
+		C268B80E1F3C36DF00BC7CD7 /* yx_core_mempool_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_mempool_buf.h; sourceTree = "<group>"; };
+		C268B80F1F3C36DF00BC7CD7 /* yx_core_mempool_cell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_mempool_cell.c; sourceTree = "<group>"; };
+		C268B8101F3C36DF00BC7CD7 /* yx_core_mempool_cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_mempool_cell.h; sourceTree = "<group>"; };
+		C268B8111F3C36DF00BC7CD7 /* yx_core_mempool_debug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_mempool_debug.c; sourceTree = "<group>"; };
+		C268B8121F3C36DF00BC7CD7 /* yx_core_mempool_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_mempool_debug.h; sourceTree = "<group>"; };
+		C268B8161F3C36DF00BC7CD7 /* yx_core_auto_interface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_auto_interface.c; sourceTree = "<group>"; };
+		C268B8171F3C36DF00BC7CD7 /* yx_core_auto_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_auto_interface.h; sourceTree = "<group>"; };
+		C268B8181F3C36DF00BC7CD7 /* yx_core_autoString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_autoString.c; sourceTree = "<group>"; };
+		C268B8191F3C36DF00BC7CD7 /* yx_core_autoString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_autoString.h; sourceTree = "<group>"; };
+		C268B81B1F3C36DF00BC7CD7 /* yx_core_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_buf.c; sourceTree = "<group>"; };
+		C268B81C1F3C36DF00BC7CD7 /* yx_core_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_buf.h; sourceTree = "<group>"; };
+		C268B81D1F3C36DF00BC7CD7 /* yx_core_buf_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_buf_data.c; sourceTree = "<group>"; };
+		C268B81E1F3C36DF00BC7CD7 /* yx_core_buf_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_buf_data.h; sourceTree = "<group>"; };
+		C268B81F1F3C36DF00BC7CD7 /* yx_core_buf_pipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_buf_pipe.c; sourceTree = "<group>"; };
+		C268B8201F3C36DF00BC7CD7 /* yx_core_buf_pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_buf_pipe.h; sourceTree = "<group>"; };
+		C268B8211F3C36DF00BC7CD7 /* yx_core_buf_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_buf_private.h; sourceTree = "<group>"; };
+		C268B8221F3C36DF00BC7CD7 /* yx_core_invbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_invbuf.c; sourceTree = "<group>"; };
+		C268B8231F3C36DF00BC7CD7 /* yx_core_invbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_invbuf.h; sourceTree = "<group>"; };
+		C268B8261F3C36DF00BC7CD7 /* yx_core_communicator_pipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_communicator_pipe.c; sourceTree = "<group>"; };
+		C268B8271F3C36DF00BC7CD7 /* yx_core_communicator_pipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_communicator_pipe.h; sourceTree = "<group>"; };
+		C268B8281F3C36DF00BC7CD7 /* yx_core_communicator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_communicator.c; sourceTree = "<group>"; };
+		C268B8291F3C36DF00BC7CD7 /* yx_core_communicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_communicator.h; sourceTree = "<group>"; };
+		C268B82A1F3C36DF00BC7CD7 /* yx_core_communicator_eventdriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_communicator_eventdriver.h; sourceTree = "<group>"; };
+		C268B82B1F3C36DF00BC7CD7 /* yx_core_communicator_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_communicator_interface.h; sourceTree = "<group>"; };
+		C268B82C1F3C36DF00BC7CD7 /* yx_core_communicator_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_communicator_type.h; sourceTree = "<group>"; };
+		C268B8331F3C36DF00BC7CD7 /* yx_core_container_valfunc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_container_valfunc.c; sourceTree = "<group>"; };
+		C268B8341F3C36DF00BC7CD7 /* yx_core_container_valfunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_container_valfunc.h; sourceTree = "<group>"; };
+		C268B8351F3C36DF00BC7CD7 /* yx_core_dictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_dictionary.c; sourceTree = "<group>"; };
+		C268B8361F3C36DF00BC7CD7 /* yx_core_dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_dictionary.h; sourceTree = "<group>"; };
+		C268B8371F3C36DF00BC7CD7 /* yx_core_hashPrime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hashPrime.c; sourceTree = "<group>"; };
+		C268B8381F3C36DF00BC7CD7 /* yx_core_hashPrime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hashPrime.h; sourceTree = "<group>"; };
+		C268B8391F3C36DF00BC7CD7 /* yx_core_hashtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hashtable.c; sourceTree = "<group>"; };
+		C268B83A1F3C36DF00BC7CD7 /* yx_core_hashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hashtable.h; sourceTree = "<group>"; };
+		C268B83B1F3C36DF00BC7CD7 /* yx_core_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_list.c; sourceTree = "<group>"; };
+		C268B83C1F3C36DF00BC7CD7 /* yx_core_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_list.h; sourceTree = "<group>"; };
+		C268B83D1F3C36DF00BC7CD7 /* yx_core_listnode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_listnode.c; sourceTree = "<group>"; };
+		C268B83E1F3C36DF00BC7CD7 /* yx_core_listnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_listnode.h; sourceTree = "<group>"; };
+		C268B83F1F3C36DF00BC7CD7 /* yx_core_queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_queue.c; sourceTree = "<group>"; };
+		C268B8401F3C36DF00BC7CD7 /* yx_core_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_queue.h; sourceTree = "<group>"; };
+		C268B8411F3C36DF00BC7CD7 /* yx_core_queuenode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_queuenode.h; sourceTree = "<group>"; };
+		C268B8421F3C36DF00BC7CD7 /* yx_core_rbnode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_rbnode.c; sourceTree = "<group>"; };
+		C268B8431F3C36DF00BC7CD7 /* yx_core_rbnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_rbnode.h; sourceTree = "<group>"; };
+		C268B8441F3C36DF00BC7CD7 /* yx_core_rbtree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_rbtree.c; sourceTree = "<group>"; };
+		C268B8451F3C36DF00BC7CD7 /* yx_core_rbtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_rbtree.h; sourceTree = "<group>"; };
+		C268B8461F3C36DF00BC7CD7 /* yx_core_slistnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_slistnode.h; sourceTree = "<group>"; };
+		C268B8471F3C36DF00BC7CD7 /* yx_core_stacknode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_stacknode.h; sourceTree = "<group>"; };
+		C268B8491F3C36DF00BC7CD7 /* yx_core_context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_context.c; sourceTree = "<group>"; };
+		C268B84A1F3C36DF00BC7CD7 /* yx_core_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_context.h; sourceTree = "<group>"; };
+		C268B84C1F3C36DF00BC7CD7 /* yx_core_range.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_range.c; sourceTree = "<group>"; };
+		C268B84D1F3C36DF00BC7CD7 /* yx_core_range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_range.h; sourceTree = "<group>"; };
+		C268B84F1F3C36DF00BC7CD7 /* yx_core_assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_assert.h; sourceTree = "<group>"; };
+		C268B85E1F3C36DF00BC7CD7 /* yx_core_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_file.c; sourceTree = "<group>"; };
+		C268B85F1F3C36DF00BC7CD7 /* yx_core_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_file.h; sourceTree = "<group>"; };
+		C268B8601F3C36DF00BC7CD7 /* yx_core_file_scaner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_file_scaner.c; sourceTree = "<group>"; };
+		C268B8611F3C36DF00BC7CD7 /* yx_core_file_scaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_file_scaner.h; sourceTree = "<group>"; };
+		C268B8621F3C36DF00BC7CD7 /* yx_core_fileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_fileManager.c; sourceTree = "<group>"; };
+		C268B8631F3C36DF00BC7CD7 /* yx_core_fileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_fileManager.h; sourceTree = "<group>"; };
+		C268B8661F3C36DF00BC7CD7 /* yx_core_hash_cityhash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hash_cityhash.c; sourceTree = "<group>"; };
+		C268B8671F3C36DF00BC7CD7 /* yx_core_hash_cityhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hash_cityhash.h; sourceTree = "<group>"; };
+		C268B8681F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hash_murmurHash.c; sourceTree = "<group>"; };
+		C268B8691F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hash_murmurHash.h; sourceTree = "<group>"; };
+		C268B86A1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hash_spookyHash.c; sourceTree = "<group>"; };
+		C268B86B1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hash_spookyHash.h; sourceTree = "<group>"; };
+		C268B86C1F3C36DF00BC7CD7 /* yx_core_hash_string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hash_string.c; sourceTree = "<group>"; };
+		C268B86D1F3C36DF00BC7CD7 /* yx_core_hash_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hash_string.h; sourceTree = "<group>"; };
+		C268B86E1F3C36DF00BC7CD7 /* yx_core_hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_hash.c; sourceTree = "<group>"; };
+		C268B86F1F3C36DF00BC7CD7 /* yx_core_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_hash.h; sourceTree = "<group>"; };
+		C268B8711F3C36DF00BC7CD7 /* yx_core_logger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_logger.c; sourceTree = "<group>"; };
+		C268B8721F3C36DF00BC7CD7 /* yx_core_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_logger.h; sourceTree = "<group>"; };
+		C268B8731F3C36DF00BC7CD7 /* yx_core_logger_def.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_logger_def.c; sourceTree = "<group>"; };
+		C268B8741F3C36DF00BC7CD7 /* yx_core_logger_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_logger_def.h; sourceTree = "<group>"; };
+		C268B8751F3C36DF00BC7CD7 /* yx_core_logger_rule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_logger_rule.c; sourceTree = "<group>"; };
+		C268B8761F3C36DF00BC7CD7 /* yx_core_logger_rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_logger_rule.h; sourceTree = "<group>"; };
+		C268B8771F3C36DF00BC7CD7 /* yx_core_logger_utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_logger_utility.h; sourceTree = "<group>"; };
+		C268B8791F3C36DF00BC7CD7 /* yx_core_random.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_random.c; sourceTree = "<group>"; };
+		C268B87A1F3C36DF00BC7CD7 /* yx_core_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_random.h; sourceTree = "<group>"; };
+		C268B87C1F3C36DF00BC7CD7 /* yx_core_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_module.c; sourceTree = "<group>"; };
+		C268B87D1F3C36DF00BC7CD7 /* yx_core_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_module.h; sourceTree = "<group>"; };
+		C268B87E1F3C36DF00BC7CD7 /* yx_core_moduleManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_moduleManager.c; sourceTree = "<group>"; };
+		C268B87F1F3C36DF00BC7CD7 /* yx_core_moduleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_moduleManager.h; sourceTree = "<group>"; };
+		C268B8801F3C36DF00BC7CD7 /* yx_core_rootmodule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_rootmodule.c; sourceTree = "<group>"; };
+		C268B8811F3C36DF00BC7CD7 /* yx_core_rootmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_rootmodule.h; sourceTree = "<group>"; };
+		C268B8831F3C36DF00BC7CD7 /* yx_core_object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_object.c; sourceTree = "<group>"; };
+		C268B8841F3C36DF00BC7CD7 /* yx_core_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_object.h; sourceTree = "<group>"; };
+		C268B8861F3C36DF00BC7CD7 /* yx_core_childprocmanager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_childprocmanager.c; sourceTree = "<group>"; };
+		C268B8871F3C36DF00BC7CD7 /* yx_core_childprocmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_childprocmanager.h; sourceTree = "<group>"; };
+		C268B8881F3C36DF00BC7CD7 /* yx_core_process.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_process.c; sourceTree = "<group>"; };
+		C268B8891F3C36DF00BC7CD7 /* yx_core_process.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_process.h; sourceTree = "<group>"; };
+		C268B88B1F3C36DF00BC7CD7 /* yx_core_rttidef.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_rttidef.c; sourceTree = "<group>"; };
+		C268B88C1F3C36DF00BC7CD7 /* yx_core_rttidef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_rttidef.h; sourceTree = "<group>"; };
+		C268B88E1F3C36DF00BC7CD7 /* yx_core_cstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_cstring.c; sourceTree = "<group>"; };
+		C268B88F1F3C36DF00BC7CD7 /* yx_core_cstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_cstring.h; sourceTree = "<group>"; };
+		C268B8901F3C36DF00BC7CD7 /* yx_core_refstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_refstring.c; sourceTree = "<group>"; };
+		C268B8911F3C36DF00BC7CD7 /* yx_core_refstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_refstring.h; sourceTree = "<group>"; };
+		C268B8921F3C36DF00BC7CD7 /* yx_core_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_string.h; sourceTree = "<group>"; };
+		C268B8931F3C36DF00BC7CD7 /* yx_core_string_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_string_buf.h; sourceTree = "<group>"; };
+		C268B8941F3C36DF00BC7CD7 /* yx_core_bit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_bit.h; sourceTree = "<group>"; };
+		C268B8951F3C36DF00BC7CD7 /* yx_core_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_global.h; sourceTree = "<group>"; };
+		C268B8961F3C36DF00BC7CD7 /* yx_core_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_headers.h; sourceTree = "<group>"; };
+		C268B8971F3C36DF00BC7CD7 /* yx_core_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_core_init.c; sourceTree = "<group>"; };
+		C268B8981F3C36DF00BC7CD7 /* yx_core_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_core_init.h; sourceTree = "<group>"; };
+		C268B9141F3C374F00BC7CD7 /* yx_unittest_global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_global.h; sourceTree = "<group>"; };
+		C268B9151F3C374F00BC7CD7 /* yx_unittest_headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_headers.h; sourceTree = "<group>"; };
+		C268B9161F3C374F00BC7CD7 /* yx_unittest_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_unittest_list.c; sourceTree = "<group>"; };
+		C268B9171F3C374F00BC7CD7 /* yx_unittest_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_list.h; sourceTree = "<group>"; };
+		C268B9181F3C374F00BC7CD7 /* yx_unittest_mempool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_unittest_mempool.c; sourceTree = "<group>"; };
+		C268B9191F3C374F00BC7CD7 /* yx_unittest_mempool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_mempool.h; sourceTree = "<group>"; };
+		C268B91A1F3C374F00BC7CD7 /* yx_unittest_rttidef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_rttidef.h; sourceTree = "<group>"; };
+		C268B91B1F3C374F00BC7CD7 /* yx_unittest_unittest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_unittest_unittest.c; sourceTree = "<group>"; };
+		C268B91C1F3C374F00BC7CD7 /* yx_unittest_unittest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_unittest_unittest.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		678E83361F3B6D3000FBFEED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		678E83301F3B6D3000FBFEED = {
+			isa = PBXGroup;
+			children = (
+				67BF30D71F3B6DD700763D40 /* YXLib */,
+				678E833A1F3B6D3000FBFEED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		678E833A1F3B6D3000FBFEED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				678E83391F3B6D3000FBFEED /* libYXLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67BF30D71F3B6DD700763D40 /* YXLib */ = {
+			isa = PBXGroup;
+			children = (
+				67BF30D81F3B6E5300763D40 /* config */,
+				67BF30ED1F3B6E5F00763D40 /* compiler */,
+				67BF30F91F3B6E7700763D40 /* datamode */,
+				67BF30FF1F3B6EA900763D40 /* thirdpart */,
+				67BF31001F3B6EC400763D40 /* os */,
+				C268B8081F3C36DF00BC7CD7 /* core */,
+				C268B9131F3C374F00BC7CD7 /* unittest */,
+			);
+			path = YXLib;
+			sourceTree = "<group>";
+		};
+		67BF30D81F3B6E5300763D40 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				67BF30D91F3B6E5300763D40 /* yx_config_app.h */,
+				67BF30DA1F3B6E5300763D40 /* yx_config_debug.h */,
+				67BF30DB1F3B6E5300763D40 /* yx_config_environment.h */,
+				67BF30DC1F3B6E5300763D40 /* yx_config_global.h */,
+				67BF30DD1F3B6E5300763D40 /* yx_config_hash.h */,
+				67BF30DE1F3B6E5300763D40 /* yx_config_headers.h */,
+				67BF30DF1F3B6E5300763D40 /* yx_config_lib.h */,
+				67BF30E01F3B6E5300763D40 /* yx_config_module.h */,
+				67BF30E11F3B6E5300763D40 /* yx_config_std.h */,
+				67BF30E21F3B6E5300763D40 /* yx_config_version.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		67BF30ED1F3B6E5F00763D40 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				67BF30EE1F3B6E5F00763D40 /* clang */,
+				67BF30F11F3B6E5F00763D40 /* yx_compiler_global.h */,
+				67BF30F21F3B6E5F00763D40 /* yx_compiler_headers.h */,
+				67BF30F31F3B6E5F00763D40 /* yx_compiler_switcher.h */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		67BF30EE1F3B6E5F00763D40 /* clang */ = {
+			isa = PBXGroup;
+			children = (
+				67BF30EF1F3B6E5F00763D40 /* yx_clang_def.h */,
+				67BF30F01F3B6E5F00763D40 /* yx_CPlusPlus_def.h */,
+			);
+			path = clang;
+			sourceTree = "<group>";
+		};
+		67BF30F91F3B6E7700763D40 /* datamode */ = {
+			isa = PBXGroup;
+			children = (
+				67BF30FA1F3B6E7700763D40 /* yx_datamode_global.h */,
+				67BF30FB1F3B6E7700763D40 /* yx_datamode_headers.h */,
+			);
+			path = datamode;
+			sourceTree = "<group>";
+		};
+		67BF30FF1F3B6EA900763D40 /* thirdpart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = thirdpart;
+			sourceTree = "<group>";
+		};
+		67BF31001F3B6EC400763D40 /* os */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31011F3B6EC400763D40 /* macosx */,
+				67BF31521F3B6EC400763D40 /* yx_os_global.h */,
+				67BF31531F3B6EC400763D40 /* yx_os_headers.h */,
+				67BF31541F3B6EC400763D40 /* yx_os_platform_switcher.h */,
+			);
+			path = os;
+			sourceTree = "<group>";
+		};
+		67BF31011F3B6EC400763D40 /* macosx */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31021F3B6EC400763D40 /* allocator */,
+				67BF31061F3B6EC400763D40 /* atomic */,
+				67BF31081F3B6EC400763D40 /* basictypes */,
+				67BF310B1F3B6EC400763D40 /* debug */,
+				67BF310D1F3B6EC400763D40 /* environment */,
+				67BF31101F3B6EC400763D40 /* err */,
+				67BF31121F3B6EC400763D40 /* event */,
+				67BF31161F3B6EC400763D40 /* file */,
+				67BF31241F3B6EC400763D40 /* mem */,
+				67BF31281F3B6EC400763D40 /* pipe */,
+				67BF312B1F3B6EC400763D40 /* platform */,
+				67BF312D1F3B6EC400763D40 /* process */,
+				67BF31341F3B6EC400763D40 /* rtti */,
+				67BF31381F3B6EC400763D40 /* security */,
+				67BF313A1F3B6EC400763D40 /* string */,
+				67BF31451F3B6EC400763D40 /* system */,
+				67BF31481F3B6EC400763D40 /* thread */,
+				67BF314A1F3B6EC400763D40 /* time */,
+				67BF314F1F3B6EC400763D40 /* yx_macosx_global.h */,
+				67BF31501F3B6EC400763D40 /* yx_macosx_headers.h */,
+				67BF31511F3B6EC400763D40 /* yx_macosx_varargs.h */,
+			);
+			path = macosx;
+			sourceTree = "<group>";
+		};
+		67BF31021F3B6EC400763D40 /* allocator */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31031F3B6EC400763D40 /* yx_macosx_allocator.c */,
+				67BF31041F3B6EC400763D40 /* yx_macosx_allocator.h */,
+				67BF31051F3B6EC400763D40 /* yx_macosx_mem.h */,
+			);
+			path = allocator;
+			sourceTree = "<group>";
+		};
+		67BF31061F3B6EC400763D40 /* atomic */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31071F3B6EC400763D40 /* yx_macosx_atomic.h */,
+			);
+			path = atomic;
+			sourceTree = "<group>";
+		};
+		67BF31081F3B6EC400763D40 /* basictypes */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31091F3B6EC400763D40 /* yx_macosx_basictypes.h */,
+				67BF310A1F3B6EC400763D40 /* yx_macosx_types.h */,
+			);
+			path = basictypes;
+			sourceTree = "<group>";
+		};
+		67BF310B1F3B6EC400763D40 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				67BF310C1F3B6EC400763D40 /* yx_macosx_debug.h */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		67BF310D1F3B6EC400763D40 /* environment */ = {
+			isa = PBXGroup;
+			children = (
+				67BF310E1F3B6EC400763D40 /* yx_macosx_environment.c */,
+				67BF310F1F3B6EC400763D40 /* yx_macosx_environment.h */,
+			);
+			path = environment;
+			sourceTree = "<group>";
+		};
+		67BF31101F3B6EC400763D40 /* err */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31111F3B6EC400763D40 /* yx_macosx_err.h */,
+			);
+			path = err;
+			sourceTree = "<group>";
+		};
+		67BF31121F3B6EC400763D40 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31131F3B6EC400763D40 /* yx_macosx_event.c */,
+				67BF31141F3B6EC400763D40 /* yx_macosx_event.h */,
+				67BF31151F3B6EC400763D40 /* yx_macosx_eventinfo.h */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
+		67BF31161F3B6EC400763D40 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31171F3B6EC400763D40 /* yx_macosx_file.h */,
+				67BF31181F3B6EC400763D40 /* yx_macosx_file_access.c */,
+				67BF31191F3B6EC400763D40 /* yx_macosx_file_access.h */,
+				67BF311A1F3B6EC400763D40 /* yx_macosx_file_authorization.h */,
+				67BF311B1F3B6EC400763D40 /* yx_macosx_file_create.h */,
+				67BF311C1F3B6EC400763D40 /* yx_macosx_file_def.h */,
+				67BF311D1F3B6EC400763D40 /* yx_macosx_file_dir.c */,
+				67BF311E1F3B6EC400763D40 /* yx_macosx_file_dir.h */,
+				67BF311F1F3B6EC400763D40 /* yx_macosx_file_info.h */,
+				67BF31201F3B6EC400763D40 /* yx_macosx_file_link.h */,
+				67BF31211F3B6EC400763D40 /* yx_macosx_file_path.h */,
+				67BF31221F3B6EC400763D40 /* yx_macosx_file_readwrite.h */,
+				67BF31231F3B6EC400763D40 /* yx_macosx_file_redirection.h */,
+			);
+			path = file;
+			sourceTree = "<group>";
+		};
+		67BF31241F3B6EC400763D40 /* mem */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31251F3B6EC400763D40 /* yx_macosx_memory.h */,
+				67BF31261F3B6EC400763D40 /* yx_macosx_shmem.c */,
+				67BF31271F3B6EC400763D40 /* yx_macosx_shmem.h */,
+			);
+			path = mem;
+			sourceTree = "<group>";
+		};
+		67BF31281F3B6EC400763D40 /* pipe */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31291F3B6EC400763D40 /* yx_macosx_pipe.c */,
+				67BF312A1F3B6EC400763D40 /* yx_macosx_pipe.h */,
+			);
+			path = pipe;
+			sourceTree = "<group>";
+		};
+		67BF312B1F3B6EC400763D40 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				67BF312C1F3B6EC400763D40 /* yx_macosx_platform.h */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		67BF312D1F3B6EC400763D40 /* process */ = {
+			isa = PBXGroup;
+			children = (
+				67BF312E1F3B6EC400763D40 /* yx_macosx_process.c */,
+				67BF312F1F3B6EC400763D40 /* yx_macosx_process.h */,
+				67BF31301F3B6EC400763D40 /* yx_macosx_process_info.c */,
+				67BF31311F3B6EC400763D40 /* yx_macosx_process_info.h */,
+				67BF31321F3B6EC400763D40 /* yx_macosx_process_status.c */,
+				67BF31331F3B6EC400763D40 /* yx_macosx_process_status.h */,
+			);
+			path = process;
+			sourceTree = "<group>";
+		};
+		67BF31341F3B6EC400763D40 /* rtti */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31351F3B6EC400763D40 /* yx_macosx_rtti.c */,
+				67BF31361F3B6EC400763D40 /* yx_macosx_rtti.h */,
+				67BF31371F3B6EC400763D40 /* yx_macosx_rttidef.h */,
+			);
+			path = rtti;
+			sourceTree = "<group>";
+		};
+		67BF31381F3B6EC400763D40 /* security */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31391F3B6EC400763D40 /* yx_macosx_token.h */,
+			);
+			path = security;
+			sourceTree = "<group>";
+		};
+		67BF313A1F3B6EC400763D40 /* string */ = {
+			isa = PBXGroup;
+			children = (
+				67BF313B1F3B6EC400763D40 /* yx_macosx_char.c */,
+				67BF313C1F3B6EC400763D40 /* yx_macosx_char.h */,
+				67BF313D1F3B6EC400763D40 /* yx_macosx_string.c */,
+				67BF313E1F3B6EC400763D40 /* yx_macosx_string.h */,
+				67BF313F1F3B6EC400763D40 /* yx_macosx_string_base64.c */,
+				67BF31401F3B6EC400763D40 /* yx_macosx_string_base64.h */,
+				67BF31411F3B6EC400763D40 /* yx_macosx_string_ext.c */,
+				67BF31421F3B6EC400763D40 /* yx_macosx_string_ext.h */,
+				67BF31431F3B6EC400763D40 /* yx_macosx_string_http.c */,
+				67BF31441F3B6EC400763D40 /* yx_macosx_string_http.h */,
+			);
+			path = string;
+			sourceTree = "<group>";
+		};
+		67BF31451F3B6EC400763D40 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31461F3B6EC400763D40 /* yx_macosx_system.c */,
+				67BF31471F3B6EC400763D40 /* yx_macosx_system.h */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		67BF31481F3B6EC400763D40 /* thread */ = {
+			isa = PBXGroup;
+			children = (
+				67BF31491F3B6EC400763D40 /* yx_macosx_thread.h */,
+			);
+			path = thread;
+			sourceTree = "<group>";
+		};
+		67BF314A1F3B6EC400763D40 /* time */ = {
+			isa = PBXGroup;
+			children = (
+				67BF314B1F3B6EC400763D40 /* yx_macosx_critime.c */,
+				67BF314C1F3B6EC400763D40 /* yx_macosx_critime.h */,
+				67BF314D1F3B6EC400763D40 /* yx_macosx_time.c */,
+				67BF314E1F3B6EC400763D40 /* yx_macosx_time.h */,
+			);
+			path = time;
+			sourceTree = "<group>";
+		};
+		C268B8081F3C36DF00BC7CD7 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8091F3C36DF00BC7CD7 /* allocator */,
+				C268B8151F3C36DF00BC7CD7 /* autotype */,
+				C268B81A1F3C36DF00BC7CD7 /* buff */,
+				C268B8241F3C36DF00BC7CD7 /* communicator */,
+				C268B82D1F3C36DF00BC7CD7 /* container */,
+				C268B8481F3C36DF00BC7CD7 /* context */,
+				C268B84B1F3C36DF00BC7CD7 /* coretypes */,
+				C268B84E1F3C36DF00BC7CD7 /* debug */,
+				C268B85D1F3C36DF00BC7CD7 /* file */,
+				C268B8641F3C36DF00BC7CD7 /* hash */,
+				C268B8701F3C36DF00BC7CD7 /* log */,
+				C268B8781F3C36DF00BC7CD7 /* math */,
+				C268B87B1F3C36DF00BC7CD7 /* module */,
+				C268B8821F3C36DF00BC7CD7 /* object */,
+				C268B8851F3C36DF00BC7CD7 /* process */,
+				C268B88A1F3C36DF00BC7CD7 /* rttidef */,
+				C268B88D1F3C36DF00BC7CD7 /* string */,
+				C268B8941F3C36DF00BC7CD7 /* yx_core_bit.h */,
+				C268B8951F3C36DF00BC7CD7 /* yx_core_global.h */,
+				C268B8961F3C36DF00BC7CD7 /* yx_core_headers.h */,
+				C268B8971F3C36DF00BC7CD7 /* yx_core_init.c */,
+				C268B8981F3C36DF00BC7CD7 /* yx_core_init.h */,
+			);
+			name = core;
+			path = YXLib/core;
+			sourceTree = SOURCE_ROOT;
+		};
+		C268B8091F3C36DF00BC7CD7 /* allocator */ = {
+			isa = PBXGroup;
+			children = (
+				C268B80A1F3C36DF00BC7CD7 /* yx_core_mem.h */,
+				C268B80B1F3C36DF00BC7CD7 /* yx_core_mempool_basic.c */,
+				C268B80C1F3C36DF00BC7CD7 /* yx_core_mempool_basic.h */,
+				C268B80D1F3C36DF00BC7CD7 /* yx_core_mempool_buf.c */,
+				C268B80E1F3C36DF00BC7CD7 /* yx_core_mempool_buf.h */,
+				C268B80F1F3C36DF00BC7CD7 /* yx_core_mempool_cell.c */,
+				C268B8101F3C36DF00BC7CD7 /* yx_core_mempool_cell.h */,
+				C268B8111F3C36DF00BC7CD7 /* yx_core_mempool_debug.c */,
+				C268B8121F3C36DF00BC7CD7 /* yx_core_mempool_debug.h */,
+			);
+			path = allocator;
+			sourceTree = "<group>";
+		};
+		C268B8151F3C36DF00BC7CD7 /* autotype */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8161F3C36DF00BC7CD7 /* yx_core_auto_interface.c */,
+				C268B8171F3C36DF00BC7CD7 /* yx_core_auto_interface.h */,
+				C268B8181F3C36DF00BC7CD7 /* yx_core_autoString.c */,
+				C268B8191F3C36DF00BC7CD7 /* yx_core_autoString.h */,
+			);
+			path = autotype;
+			sourceTree = "<group>";
+		};
+		C268B81A1F3C36DF00BC7CD7 /* buff */ = {
+			isa = PBXGroup;
+			children = (
+				C268B81B1F3C36DF00BC7CD7 /* yx_core_buf.c */,
+				C268B81C1F3C36DF00BC7CD7 /* yx_core_buf.h */,
+				C268B81D1F3C36DF00BC7CD7 /* yx_core_buf_data.c */,
+				C268B81E1F3C36DF00BC7CD7 /* yx_core_buf_data.h */,
+				C268B81F1F3C36DF00BC7CD7 /* yx_core_buf_pipe.c */,
+				C268B8201F3C36DF00BC7CD7 /* yx_core_buf_pipe.h */,
+				C268B8211F3C36DF00BC7CD7 /* yx_core_buf_private.h */,
+				C268B8221F3C36DF00BC7CD7 /* yx_core_invbuf.c */,
+				C268B8231F3C36DF00BC7CD7 /* yx_core_invbuf.h */,
+			);
+			path = buff;
+			sourceTree = "<group>";
+		};
+		C268B8241F3C36DF00BC7CD7 /* communicator */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8251F3C36DF00BC7CD7 /* implementation */,
+				C268B8281F3C36DF00BC7CD7 /* yx_core_communicator.c */,
+				C268B8291F3C36DF00BC7CD7 /* yx_core_communicator.h */,
+				C268B82A1F3C36DF00BC7CD7 /* yx_core_communicator_eventdriver.h */,
+				C268B82B1F3C36DF00BC7CD7 /* yx_core_communicator_interface.h */,
+				C268B82C1F3C36DF00BC7CD7 /* yx_core_communicator_type.h */,
+			);
+			path = communicator;
+			sourceTree = "<group>";
+		};
+		C268B8251F3C36DF00BC7CD7 /* implementation */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8261F3C36DF00BC7CD7 /* yx_core_communicator_pipe.c */,
+				C268B8271F3C36DF00BC7CD7 /* yx_core_communicator_pipe.h */,
+			);
+			path = implementation;
+			sourceTree = "<group>";
+		};
+		C268B82D1F3C36DF00BC7CD7 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8331F3C36DF00BC7CD7 /* yx_core_container_valfunc.c */,
+				C268B8341F3C36DF00BC7CD7 /* yx_core_container_valfunc.h */,
+				C268B8351F3C36DF00BC7CD7 /* yx_core_dictionary.c */,
+				C268B8361F3C36DF00BC7CD7 /* yx_core_dictionary.h */,
+				C268B8371F3C36DF00BC7CD7 /* yx_core_hashPrime.c */,
+				C268B8381F3C36DF00BC7CD7 /* yx_core_hashPrime.h */,
+				C268B8391F3C36DF00BC7CD7 /* yx_core_hashtable.c */,
+				C268B83A1F3C36DF00BC7CD7 /* yx_core_hashtable.h */,
+				C268B83B1F3C36DF00BC7CD7 /* yx_core_list.c */,
+				C268B83C1F3C36DF00BC7CD7 /* yx_core_list.h */,
+				C268B83D1F3C36DF00BC7CD7 /* yx_core_listnode.c */,
+				C268B83E1F3C36DF00BC7CD7 /* yx_core_listnode.h */,
+				C268B83F1F3C36DF00BC7CD7 /* yx_core_queue.c */,
+				C268B8401F3C36DF00BC7CD7 /* yx_core_queue.h */,
+				C268B8411F3C36DF00BC7CD7 /* yx_core_queuenode.h */,
+				C268B8421F3C36DF00BC7CD7 /* yx_core_rbnode.c */,
+				C268B8431F3C36DF00BC7CD7 /* yx_core_rbnode.h */,
+				C268B8441F3C36DF00BC7CD7 /* yx_core_rbtree.c */,
+				C268B8451F3C36DF00BC7CD7 /* yx_core_rbtree.h */,
+				C268B8461F3C36DF00BC7CD7 /* yx_core_slistnode.h */,
+				C268B8471F3C36DF00BC7CD7 /* yx_core_stacknode.h */,
+			);
+			path = container;
+			sourceTree = "<group>";
+		};
+		C268B8481F3C36DF00BC7CD7 /* context */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8491F3C36DF00BC7CD7 /* yx_core_context.c */,
+				C268B84A1F3C36DF00BC7CD7 /* yx_core_context.h */,
+			);
+			path = context;
+			sourceTree = "<group>";
+		};
+		C268B84B1F3C36DF00BC7CD7 /* coretypes */ = {
+			isa = PBXGroup;
+			children = (
+				C268B84C1F3C36DF00BC7CD7 /* yx_core_range.c */,
+				C268B84D1F3C36DF00BC7CD7 /* yx_core_range.h */,
+			);
+			path = coretypes;
+			sourceTree = "<group>";
+		};
+		C268B84E1F3C36DF00BC7CD7 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				C268B84F1F3C36DF00BC7CD7 /* yx_core_assert.h */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		C268B85D1F3C36DF00BC7CD7 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				C268B85E1F3C36DF00BC7CD7 /* yx_core_file.c */,
+				C268B85F1F3C36DF00BC7CD7 /* yx_core_file.h */,
+				C268B8601F3C36DF00BC7CD7 /* yx_core_file_scaner.c */,
+				C268B8611F3C36DF00BC7CD7 /* yx_core_file_scaner.h */,
+				C268B8621F3C36DF00BC7CD7 /* yx_core_fileManager.c */,
+				C268B8631F3C36DF00BC7CD7 /* yx_core_fileManager.h */,
+			);
+			path = file;
+			sourceTree = "<group>";
+		};
+		C268B8641F3C36DF00BC7CD7 /* hash */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8651F3C36DF00BC7CD7 /* stringhash */,
+				C268B86E1F3C36DF00BC7CD7 /* yx_core_hash.c */,
+				C268B86F1F3C36DF00BC7CD7 /* yx_core_hash.h */,
+			);
+			path = hash;
+			sourceTree = "<group>";
+		};
+		C268B8651F3C36DF00BC7CD7 /* stringhash */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8661F3C36DF00BC7CD7 /* yx_core_hash_cityhash.c */,
+				C268B8671F3C36DF00BC7CD7 /* yx_core_hash_cityhash.h */,
+				C268B8681F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.c */,
+				C268B8691F3C36DF00BC7CD7 /* yx_core_hash_murmurHash.h */,
+				C268B86A1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.c */,
+				C268B86B1F3C36DF00BC7CD7 /* yx_core_hash_spookyHash.h */,
+				C268B86C1F3C36DF00BC7CD7 /* yx_core_hash_string.c */,
+				C268B86D1F3C36DF00BC7CD7 /* yx_core_hash_string.h */,
+			);
+			path = stringhash;
+			sourceTree = "<group>";
+		};
+		C268B8701F3C36DF00BC7CD7 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8711F3C36DF00BC7CD7 /* yx_core_logger.c */,
+				C268B8721F3C36DF00BC7CD7 /* yx_core_logger.h */,
+				C268B8731F3C36DF00BC7CD7 /* yx_core_logger_def.c */,
+				C268B8741F3C36DF00BC7CD7 /* yx_core_logger_def.h */,
+				C268B8751F3C36DF00BC7CD7 /* yx_core_logger_rule.c */,
+				C268B8761F3C36DF00BC7CD7 /* yx_core_logger_rule.h */,
+				C268B8771F3C36DF00BC7CD7 /* yx_core_logger_utility.h */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		C268B8781F3C36DF00BC7CD7 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8791F3C36DF00BC7CD7 /* yx_core_random.c */,
+				C268B87A1F3C36DF00BC7CD7 /* yx_core_random.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		C268B87B1F3C36DF00BC7CD7 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				C268B87C1F3C36DF00BC7CD7 /* yx_core_module.c */,
+				C268B87D1F3C36DF00BC7CD7 /* yx_core_module.h */,
+				C268B87E1F3C36DF00BC7CD7 /* yx_core_moduleManager.c */,
+				C268B87F1F3C36DF00BC7CD7 /* yx_core_moduleManager.h */,
+				C268B8801F3C36DF00BC7CD7 /* yx_core_rootmodule.c */,
+				C268B8811F3C36DF00BC7CD7 /* yx_core_rootmodule.h */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		C268B8821F3C36DF00BC7CD7 /* object */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8831F3C36DF00BC7CD7 /* yx_core_object.c */,
+				C268B8841F3C36DF00BC7CD7 /* yx_core_object.h */,
+			);
+			path = object;
+			sourceTree = "<group>";
+		};
+		C268B8851F3C36DF00BC7CD7 /* process */ = {
+			isa = PBXGroup;
+			children = (
+				C268B8861F3C36DF00BC7CD7 /* yx_core_childprocmanager.c */,
+				C268B8871F3C36DF00BC7CD7 /* yx_core_childprocmanager.h */,
+				C268B8881F3C36DF00BC7CD7 /* yx_core_process.c */,
+				C268B8891F3C36DF00BC7CD7 /* yx_core_process.h */,
+			);
+			path = process;
+			sourceTree = "<group>";
+		};
+		C268B88A1F3C36DF00BC7CD7 /* rttidef */ = {
+			isa = PBXGroup;
+			children = (
+				C268B88B1F3C36DF00BC7CD7 /* yx_core_rttidef.c */,
+				C268B88C1F3C36DF00BC7CD7 /* yx_core_rttidef.h */,
+			);
+			path = rttidef;
+			sourceTree = "<group>";
+		};
+		C268B88D1F3C36DF00BC7CD7 /* string */ = {
+			isa = PBXGroup;
+			children = (
+				C268B88E1F3C36DF00BC7CD7 /* yx_core_cstring.c */,
+				C268B88F1F3C36DF00BC7CD7 /* yx_core_cstring.h */,
+				C268B8901F3C36DF00BC7CD7 /* yx_core_refstring.c */,
+				C268B8911F3C36DF00BC7CD7 /* yx_core_refstring.h */,
+				C268B8921F3C36DF00BC7CD7 /* yx_core_string.h */,
+				C268B8931F3C36DF00BC7CD7 /* yx_core_string_buf.h */,
+			);
+			path = string;
+			sourceTree = "<group>";
+		};
+		C268B9131F3C374F00BC7CD7 /* unittest */ = {
+			isa = PBXGroup;
+			children = (
+				C268B9141F3C374F00BC7CD7 /* yx_unittest_global.h */,
+				C268B9151F3C374F00BC7CD7 /* yx_unittest_headers.h */,
+				C268B9161F3C374F00BC7CD7 /* yx_unittest_list.c */,
+				C268B9171F3C374F00BC7CD7 /* yx_unittest_list.h */,
+				C268B9181F3C374F00BC7CD7 /* yx_unittest_mempool.c */,
+				C268B9191F3C374F00BC7CD7 /* yx_unittest_mempool.h */,
+				C268B91A1F3C374F00BC7CD7 /* yx_unittest_rttidef.h */,
+				C268B91B1F3C374F00BC7CD7 /* yx_unittest_unittest.c */,
+				C268B91C1F3C374F00BC7CD7 /* yx_unittest_unittest.h */,
+			);
+			path = unittest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		678E83371F3B6D3000FBFEED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C268B8E21F3C36E000BC7CD7 /* yx_core_file.h in Headers */,
+				67BF30E51F3B6E5300763D40 /* yx_config_environment.h in Headers */,
+				C268B91E1F3C375000BC7CD7 /* yx_unittest_headers.h in Headers */,
+				C268B90E1F3C36E000BC7CD7 /* yx_core_bit.h in Headers */,
+				67BF31761F3B6EC400763D40 /* yx_macosx_process.h in Headers */,
+				67BF31661F3B6EC400763D40 /* yx_macosx_file_create.h in Headers */,
+				C268B8AE1F3C36E000BC7CD7 /* yx_core_buf_private.h in Headers */,
+				C268B8EC1F3C36E000BC7CD7 /* yx_core_hash_spookyHash.h in Headers */,
+				67BF30E31F3B6E5300763D40 /* yx_config_app.h in Headers */,
+				67BF31651F3B6EC400763D40 /* yx_macosx_file_authorization.h in Headers */,
+				67BF30E81F3B6E5300763D40 /* yx_config_headers.h in Headers */,
+				67BF30EA1F3B6E5300763D40 /* yx_config_module.h in Headers */,
+				C268B8A51F3C36E000BC7CD7 /* yx_core_auto_interface.h in Headers */,
+				67BF30F41F3B6E5F00763D40 /* yx_clang_def.h in Headers */,
+				C268B8C11F3C36E000BC7CD7 /* yx_core_hashPrime.h in Headers */,
+				67BF31691F3B6EC400763D40 /* yx_macosx_file_dir.h in Headers */,
+				67BF30F61F3B6E5F00763D40 /* yx_compiler_global.h in Headers */,
+				67BF31731F3B6EC400763D40 /* yx_macosx_pipe.h in Headers */,
+				C268B8B51F3C36E000BC7CD7 /* yx_core_communicator_eventdriver.h in Headers */,
+				C268B8F61F3C36E000BC7CD7 /* yx_core_logger_rule.h in Headers */,
+				C268B91D1F3C374F00BC7CD7 /* yx_unittest_global.h in Headers */,
+				C268B8BD1F3C36E000BC7CD7 /* yx_core_container_valfunc.h in Headers */,
+				C268B90F1F3C36E000BC7CD7 /* yx_core_global.h in Headers */,
+				67BF30F81F3B6E5F00763D40 /* yx_compiler_switcher.h in Headers */,
+				C268B9251F3C375000BC7CD7 /* yx_unittest_unittest.h in Headers */,
+				67BF30F51F3B6E5F00763D40 /* yx_CPlusPlus_def.h in Headers */,
+				C268B8FB1F3C36E000BC7CD7 /* yx_core_module.h in Headers */,
+				67BF31861F3B6EC400763D40 /* yx_macosx_string_ext.h in Headers */,
+				67BF31711F3B6EC400763D40 /* yx_macosx_shmem.h in Headers */,
+				C268B9031F3C36E000BC7CD7 /* yx_core_childprocmanager.h in Headers */,
+				67BF30F71F3B6E5F00763D40 /* yx_compiler_headers.h in Headers */,
+				67BF30FC1F3B6E7700763D40 /* yx_datamode_global.h in Headers */,
+				67BF315E1F3B6EC400763D40 /* yx_macosx_err.h in Headers */,
+				C268B8F91F3C36E000BC7CD7 /* yx_core_random.h in Headers */,
+				C268B8CA1F3C36E000BC7CD7 /* yx_core_queuenode.h in Headers */,
+				C268B8CE1F3C36E000BC7CD7 /* yx_core_rbtree.h in Headers */,
+				67BF31841F3B6EC400763D40 /* yx_macosx_string_base64.h in Headers */,
+				C268B8D41F3C36E000BC7CD7 /* yx_core_range.h in Headers */,
+				C268B8D01F3C36E000BC7CD7 /* yx_core_stacknode.h in Headers */,
+				67BF31821F3B6EC400763D40 /* yx_macosx_string.h in Headers */,
+				67BF317A1F3B6EC400763D40 /* yx_macosx_process_status.h in Headers */,
+				C268B9201F3C375000BC7CD7 /* yx_unittest_list.h in Headers */,
+				67BF317E1F3B6EC400763D40 /* yx_macosx_token.h in Headers */,
+				67BF30EC1F3B6E5300763D40 /* yx_config_version.h in Headers */,
+				C268B8AD1F3C36E000BC7CD7 /* yx_core_buf_pipe.h in Headers */,
+				67BF30E91F3B6E5300763D40 /* yx_config_lib.h in Headers */,
+				C268B90B1F3C36E000BC7CD7 /* yx_core_refstring.h in Headers */,
+				67BF315D1F3B6EC400763D40 /* yx_macosx_environment.h in Headers */,
+				67BF31921F3B6EC400763D40 /* yx_macosx_varargs.h in Headers */,
+				C268B8C91F3C36E000BC7CD7 /* yx_core_queue.h in Headers */,
+				67BF31571F3B6EC400763D40 /* yx_macosx_mem.h in Headers */,
+				C268B8CC1F3C36E000BC7CD7 /* yx_core_rbnode.h in Headers */,
+				67BF31601F3B6EC400763D40 /* yx_macosx_event.h in Headers */,
+				C268B8B61F3C36E000BC7CD7 /* yx_core_communicator_interface.h in Headers */,
+				67BF31901F3B6EC400763D40 /* yx_macosx_global.h in Headers */,
+				67BF317C1F3B6EC400763D40 /* yx_macosx_rtti.h in Headers */,
+				C268B9121F3C36E000BC7CD7 /* yx_core_init.h in Headers */,
+				C268B8FD1F3C36E000BC7CD7 /* yx_core_moduleManager.h in Headers */,
+				67BF31671F3B6EC400763D40 /* yx_macosx_file_def.h in Headers */,
+				C268B8BF1F3C36E000BC7CD7 /* yx_core_dictionary.h in Headers */,
+				C268B8A91F3C36E000BC7CD7 /* yx_core_buf.h in Headers */,
+				C268B89F1F3C36E000BC7CD7 /* yx_core_mempool_cell.h in Headers */,
+				C268B8B71F3C36E000BC7CD7 /* yx_core_communicator_type.h in Headers */,
+				67BF316A1F3B6EC400763D40 /* yx_macosx_file_info.h in Headers */,
+				C268B8E41F3C36E000BC7CD7 /* yx_core_file_scaner.h in Headers */,
+				67BF31931F3B6EC400763D40 /* yx_os_global.h in Headers */,
+				C268B8C31F3C36E000BC7CD7 /* yx_core_hashtable.h in Headers */,
+				67BF316B1F3B6EC400763D40 /* yx_macosx_file_link.h in Headers */,
+				67BF31801F3B6EC400763D40 /* yx_macosx_char.h in Headers */,
+				67BF31621F3B6EC400763D40 /* yx_macosx_file.h in Headers */,
+				67BF318A1F3B6EC400763D40 /* yx_macosx_system.h in Headers */,
+				67BF318F1F3B6EC400763D40 /* yx_macosx_time.h in Headers */,
+				67BF31641F3B6EC400763D40 /* yx_macosx_file_access.h in Headers */,
+				67BF31561F3B6EC400763D40 /* yx_macosx_allocator.h in Headers */,
+				C268B8CF1F3C36E000BC7CD7 /* yx_core_slistnode.h in Headers */,
+				C268B8AB1F3C36E000BC7CD7 /* yx_core_buf_data.h in Headers */,
+				67BF316E1F3B6EC400763D40 /* yx_macosx_file_redirection.h in Headers */,
+				C268B8991F3C36DF00BC7CD7 /* yx_core_mem.h in Headers */,
+				C268B9101F3C36E000BC7CD7 /* yx_core_headers.h in Headers */,
+				67BF30FD1F3B6E7700763D40 /* yx_datamode_headers.h in Headers */,
+				C268B9071F3C36E000BC7CD7 /* yx_core_rttidef.h in Headers */,
+				C268B90D1F3C36E000BC7CD7 /* yx_core_string_buf.h in Headers */,
+				67BF317D1F3B6EC400763D40 /* yx_macosx_rttidef.h in Headers */,
+				67BF31781F3B6EC400763D40 /* yx_macosx_process_info.h in Headers */,
+				67BF31951F3B6EC400763D40 /* yx_os_platform_switcher.h in Headers */,
+				C268B8A11F3C36E000BC7CD7 /* yx_core_mempool_debug.h in Headers */,
+				C268B8C71F3C36E000BC7CD7 /* yx_core_listnode.h in Headers */,
+				C268B9051F3C36E000BC7CD7 /* yx_core_process.h in Headers */,
+				67BF31581F3B6EC400763D40 /* yx_macosx_atomic.h in Headers */,
+				67BF31911F3B6EC400763D40 /* yx_macosx_headers.h in Headers */,
+				C268B8B21F3C36E000BC7CD7 /* yx_core_communicator_pipe.h in Headers */,
+				C268B8F21F3C36E000BC7CD7 /* yx_core_logger.h in Headers */,
+				C268B8E81F3C36E000BC7CD7 /* yx_core_hash_cityhash.h in Headers */,
+				67BF316D1F3B6EC400763D40 /* yx_macosx_file_readwrite.h in Headers */,
+				C268B9231F3C375000BC7CD7 /* yx_unittest_rttidef.h in Headers */,
+				67BF30E61F3B6E5300763D40 /* yx_config_global.h in Headers */,
+				C268B8EE1F3C36E000BC7CD7 /* yx_core_hash_string.h in Headers */,
+				67BF31591F3B6EC400763D40 /* yx_macosx_basictypes.h in Headers */,
+				67BF316F1F3B6EC400763D40 /* yx_macosx_memory.h in Headers */,
+				C268B9221F3C375000BC7CD7 /* yx_unittest_mempool.h in Headers */,
+				C268B8F71F3C36E000BC7CD7 /* yx_core_logger_utility.h in Headers */,
+				C268B8B41F3C36E000BC7CD7 /* yx_core_communicator.h in Headers */,
+				C268B8B01F3C36E000BC7CD7 /* yx_core_invbuf.h in Headers */,
+				67BF30EB1F3B6E5300763D40 /* yx_config_std.h in Headers */,
+				67BF318B1F3B6EC400763D40 /* yx_macosx_thread.h in Headers */,
+				C268B8C51F3C36E000BC7CD7 /* yx_core_list.h in Headers */,
+				67BF31941F3B6EC400763D40 /* yx_os_headers.h in Headers */,
+				C268B9011F3C36E000BC7CD7 /* yx_core_object.h in Headers */,
+				67BF30E71F3B6E5300763D40 /* yx_config_hash.h in Headers */,
+				C268B8F01F3C36E000BC7CD7 /* yx_core_hash.h in Headers */,
+				67BF318D1F3B6EC400763D40 /* yx_macosx_critime.h in Headers */,
+				C268B8F41F3C36E000BC7CD7 /* yx_core_logger_def.h in Headers */,
+				C268B8E61F3C36E000BC7CD7 /* yx_core_fileManager.h in Headers */,
+				C268B9091F3C36E000BC7CD7 /* yx_core_cstring.h in Headers */,
+				C268B8FF1F3C36E000BC7CD7 /* yx_core_rootmodule.h in Headers */,
+				C268B89B1F3C36E000BC7CD7 /* yx_core_mempool_basic.h in Headers */,
+				C268B8D21F3C36E000BC7CD7 /* yx_core_context.h in Headers */,
+				C268B89D1F3C36E000BC7CD7 /* yx_core_mempool_buf.h in Headers */,
+				67BF315B1F3B6EC400763D40 /* yx_macosx_debug.h in Headers */,
+				C268B8D51F3C36E000BC7CD7 /* yx_core_assert.h in Headers */,
+				67BF31741F3B6EC400763D40 /* yx_macosx_platform.h in Headers */,
+				67BF31611F3B6EC400763D40 /* yx_macosx_eventinfo.h in Headers */,
+				C268B8EA1F3C36E000BC7CD7 /* yx_core_hash_murmurHash.h in Headers */,
+				67BF31881F3B6EC400763D40 /* yx_macosx_string_http.h in Headers */,
+				67BF316C1F3B6EC400763D40 /* yx_macosx_file_path.h in Headers */,
+				67BF315A1F3B6EC400763D40 /* yx_macosx_types.h in Headers */,
+				C268B90C1F3C36E000BC7CD7 /* yx_core_string.h in Headers */,
+				C268B8A71F3C36E000BC7CD7 /* yx_core_autoString.h in Headers */,
+				67BF30E41F3B6E5300763D40 /* yx_config_debug.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		678E83381F3B6D3000FBFEED /* YXLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 678E833D1F3B6D3000FBFEED /* Build configuration list for PBXNativeTarget "YXLib" */;
+			buildPhases = (
+				678E83351F3B6D3000FBFEED /* Sources */,
+				678E83361F3B6D3000FBFEED /* Frameworks */,
+				678E83371F3B6D3000FBFEED /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YXLib;
+			productName = YXLib;
+			productReference = 678E83391F3B6D3000FBFEED /* libYXLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		678E83311F3B6D3000FBFEED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Yuxi Liu";
+				TargetAttributes = {
+					678E83381F3B6D3000FBFEED = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7EXK732QC2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 678E83341F3B6D3000FBFEED /* Build configuration list for PBXProject "YXLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 678E83301F3B6D3000FBFEED;
+			productRefGroup = 678E833A1F3B6D3000FBFEED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				678E83381F3B6D3000FBFEED /* YXLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		678E83351F3B6D3000FBFEED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67BF31701F3B6EC400763D40 /* yx_macosx_shmem.c in Sources */,
+				C268B8BC1F3C36E000BC7CD7 /* yx_core_container_valfunc.c in Sources */,
+				C268B8B31F3C36E000BC7CD7 /* yx_core_communicator.c in Sources */,
+				C268B9111F3C36E000BC7CD7 /* yx_core_init.c in Sources */,
+				C268B8FE1F3C36E000BC7CD7 /* yx_core_rootmodule.c in Sources */,
+				C268B8E31F3C36E000BC7CD7 /* yx_core_file_scaner.c in Sources */,
+				C268B9211F3C375000BC7CD7 /* yx_unittest_mempool.c in Sources */,
+				C268B9041F3C36E000BC7CD7 /* yx_core_process.c in Sources */,
+				C268B8AA1F3C36E000BC7CD7 /* yx_core_buf_data.c in Sources */,
+				67BF315F1F3B6EC400763D40 /* yx_macosx_event.c in Sources */,
+				C268B8A41F3C36E000BC7CD7 /* yx_core_auto_interface.c in Sources */,
+				C268B8A81F3C36E000BC7CD7 /* yx_core_buf.c in Sources */,
+				C268B9061F3C36E000BC7CD7 /* yx_core_rttidef.c in Sources */,
+				C268B8AC1F3C36E000BC7CD7 /* yx_core_buf_pipe.c in Sources */,
+				67BF317B1F3B6EC400763D40 /* yx_macosx_rtti.c in Sources */,
+				C268B89E1F3C36E000BC7CD7 /* yx_core_mempool_cell.c in Sources */,
+				C268B8F81F3C36E000BC7CD7 /* yx_core_random.c in Sources */,
+				67BF31551F3B6EC400763D40 /* yx_macosx_allocator.c in Sources */,
+				C268B8D11F3C36E000BC7CD7 /* yx_core_context.c in Sources */,
+				67BF318E1F3B6EC400763D40 /* yx_macosx_time.c in Sources */,
+				67BF315C1F3B6EC400763D40 /* yx_macosx_environment.c in Sources */,
+				67BF31831F3B6EC400763D40 /* yx_macosx_string_base64.c in Sources */,
+				C268B8F51F3C36E000BC7CD7 /* yx_core_logger_rule.c in Sources */,
+				67BF317F1F3B6EC400763D40 /* yx_macosx_char.c in Sources */,
+				C268B8F31F3C36E000BC7CD7 /* yx_core_logger_def.c in Sources */,
+				C268B8BE1F3C36E000BC7CD7 /* yx_core_dictionary.c in Sources */,
+				C268B8CB1F3C36E000BC7CD7 /* yx_core_rbnode.c in Sources */,
+				C268B8E91F3C36E000BC7CD7 /* yx_core_hash_murmurHash.c in Sources */,
+				C268B8E51F3C36E000BC7CD7 /* yx_core_fileManager.c in Sources */,
+				C268B8D31F3C36E000BC7CD7 /* yx_core_range.c in Sources */,
+				C268B9021F3C36E000BC7CD7 /* yx_core_childprocmanager.c in Sources */,
+				C268B8FC1F3C36E000BC7CD7 /* yx_core_moduleManager.c in Sources */,
+				67BF31851F3B6EC400763D40 /* yx_macosx_string_ext.c in Sources */,
+				C268B8A01F3C36E000BC7CD7 /* yx_core_mempool_debug.c in Sources */,
+				67BF31871F3B6EC400763D40 /* yx_macosx_string_http.c in Sources */,
+				C268B8C61F3C36E000BC7CD7 /* yx_core_listnode.c in Sources */,
+				67BF31721F3B6EC400763D40 /* yx_macosx_pipe.c in Sources */,
+				C268B8CD1F3C36E000BC7CD7 /* yx_core_rbtree.c in Sources */,
+				C268B8EB1F3C36E000BC7CD7 /* yx_core_hash_spookyHash.c in Sources */,
+				67BF31811F3B6EC400763D40 /* yx_macosx_string.c in Sources */,
+				C268B8E71F3C36E000BC7CD7 /* yx_core_hash_cityhash.c in Sources */,
+				C268B8AF1F3C36E000BC7CD7 /* yx_core_invbuf.c in Sources */,
+				C268B8C21F3C36E000BC7CD7 /* yx_core_hashtable.c in Sources */,
+				67BF31751F3B6EC400763D40 /* yx_macosx_process.c in Sources */,
+				C268B8B11F3C36E000BC7CD7 /* yx_core_communicator_pipe.c in Sources */,
+				C268B90A1F3C36E000BC7CD7 /* yx_core_refstring.c in Sources */,
+				C268B89A1F3C36E000BC7CD7 /* yx_core_mempool_basic.c in Sources */,
+				67BF31631F3B6EC400763D40 /* yx_macosx_file_access.c in Sources */,
+				C268B8FA1F3C36E000BC7CD7 /* yx_core_module.c in Sources */,
+				67BF31791F3B6EC400763D40 /* yx_macosx_process_status.c in Sources */,
+				C268B8C81F3C36E000BC7CD7 /* yx_core_queue.c in Sources */,
+				C268B8E11F3C36E000BC7CD7 /* yx_core_file.c in Sources */,
+				C268B9241F3C375000BC7CD7 /* yx_unittest_unittest.c in Sources */,
+				C268B9081F3C36E000BC7CD7 /* yx_core_cstring.c in Sources */,
+				67BF31891F3B6EC400763D40 /* yx_macosx_system.c in Sources */,
+				C268B8C41F3C36E000BC7CD7 /* yx_core_list.c in Sources */,
+				C268B89C1F3C36E000BC7CD7 /* yx_core_mempool_buf.c in Sources */,
+				67BF318C1F3B6EC400763D40 /* yx_macosx_critime.c in Sources */,
+				C268B8A61F3C36E000BC7CD7 /* yx_core_autoString.c in Sources */,
+				C268B9001F3C36E000BC7CD7 /* yx_core_object.c in Sources */,
+				C268B8EF1F3C36E000BC7CD7 /* yx_core_hash.c in Sources */,
+				C268B8F11F3C36E000BC7CD7 /* yx_core_logger.c in Sources */,
+				C268B91F1F3C375000BC7CD7 /* yx_unittest_list.c in Sources */,
+				C268B8C01F3C36E000BC7CD7 /* yx_core_hashPrime.c in Sources */,
+				C268B8ED1F3C36E000BC7CD7 /* yx_core_hash_string.c in Sources */,
+				67BF31771F3B6EC400763D40 /* yx_macosx_process_info.c in Sources */,
+				67BF31681F3B6EC400763D40 /* yx_macosx_file_dir.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		678E833B1F3B6D3000FBFEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		678E833C1F3B6D3000FBFEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		678E833E1F3B6D3000FBFEED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7EXK732QC2;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		678E833F1F3B6D3000FBFEED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 7EXK732QC2;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		678E83341F3B6D3000FBFEED /* Build configuration list for PBXProject "YXLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				678E833B1F3B6D3000FBFEED /* Debug */,
+				678E833C1F3B6D3000FBFEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		678E833D1F3B6D3000FBFEED /* Build configuration list for PBXNativeTarget "YXLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				678E833E1F3B6D3000FBFEED /* Debug */,
+				678E833F1F3B6D3000FBFEED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 678E83311F3B6D3000FBFEED /* Project object */;
+}
