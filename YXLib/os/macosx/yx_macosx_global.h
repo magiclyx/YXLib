@@ -21,6 +21,7 @@
 #include <stdarg.h>
 #include <time.h>
 #include <math.h>
+#include <stdatomic.h>
 
 /*posix*/
 #include <unistd.h>
@@ -41,7 +42,7 @@
 #include <TargetConditionals.h> //platform info
 #include <mach/mach.h>
 #include <mach/mach_time.h>
-#include <libkern/OSAtomic.h>   //atomic
+//#include <libkern/OSAtomic.h>   //atomic deprecated, 使用 stdatomic.h
 
 
 /*cpu crc*/
