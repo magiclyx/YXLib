@@ -55,6 +55,7 @@ void yx_basicMempool_free(yx_allocator allocator, yx_ptr address);
 #define YX_MEMPOOL_BASIC_DEBUG_LARGEMEM_START (YX_MEMPOOL_BASIC_SMALLMEMORY_SLOTNUM*YX_ALIGNMENT)
 
 yx_bool isSmallSlutEmpty(yx_handle pool);
+yx_bool isLargeSlutEmpty(yx_handle pool);
 
 #endif //end of YX_ALLOCATOR_VERIFY
 

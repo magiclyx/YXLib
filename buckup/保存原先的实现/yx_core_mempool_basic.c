@@ -27,6 +27,22 @@
 #define YX_MEMPOOL_BASICMEM_TYPE_LARGE    1
 #define YX_MEMPOOL_BASICMEM_TYPE_ALIGN    2
 
+/*large slot*/
+#pragma mark - struct larg slot
+////////////////////////////////////////////////////////////////////////////////////////////////////
+struct __yx_memPool_basic_largeBlock_s{
+    struct __yx_memPool_basic_largeBlock_s* next;
+    struct __yx_memPool_basic_largeBlock_s* prev;
+    void* alloc;
+};
+
+
+struct __yx_memPool_largeSlot_s{
+    struct __yx_memPool_basic_largeBlock_s* block;
+};
+
+
+
 
 /*slot*/
 #pragma mark - struct slot
@@ -75,6 +91,13 @@ struct __yx_memPool_basic_memHeader_alignment_s{
 
 YX_STATIC_ASSERT_ALIGMENT(struct __yx_memPool_basic_memHeader_alignment_s);
 
+//appened when alloc the memory from the large slut. 
+struct __yx_memPool_basic_memHeader_large_s{
+    struct __yx_memPool_basic_largeBlock_s* onwer_block;
+    YX_STRUCT_ALIGNMENT_INFILLING(sizeof(struct __yx_memPool_basic_largeBlock_s*));
+};
+
+YX_STATIC_ASSERT_ALIGMENT(struct __yx_memPool_basic_memHeader_large_s);
 
 /*pool*/
 #pragma mark struct pool
@@ -82,6 +105,8 @@ YX_STATIC_ASSERT_ALIGMENT(struct __yx_memPool_basic_memHeader_alignment_s);
 struct __yx_memPool_basicPool_s{
     YX_ALLOCATOR_STRUCT_DECLARE;
     yx_allocator allocator;
+    
+    struct __yx_memPool_largeSlot_s largeSlot[YX_MEMPOOL_BASIC_LARGERMEMORY_BITSUPPORT]; //这里可以优化，因为对于这张表来说，前面几位总是空的。因为这是大内存池
     struct __yx_memPool_slot_s slot[YX_MEMPOOL_BASIC_SMALLMEMORY_SLOTNUM];
 };
 
@@ -103,10 +128,12 @@ struct __yx_memPool_basicPool_s{
 #if (4 == YX_ALIGNMENT)
 #define YX_MEMPOOL_BASIC_SLOT_INDEX(size) (size >> 3)
 #define YX_MEMPOOL_BASIC_SLOT_SIZE(index) ((index+1) << 3) //index start from 0, so need to add 1
+#define YX_MEMPOOL_BASIC_LARGSLOG_INDEX(size) yx_value32_max_bit_len(size)
 #elif (8 == YX_ALIGNMENT)
 //#define YX_MEMPOOL_BASIC_SLOT_INDEX(size) (size >> 4) + ((size & 15)? 0 : -1)
 #define YX_MEMPOOL_BASIC_SLOT_INDEX(size) (size >> 4)
 #define YX_MEMPOOL_BASIC_SLOT_SIZE(index) ((index+1) << 4) //index start from 0, so need to add 1
+#define YX_MEMPOOL_BASIC_LARGSLOG_INDEX(size) yx_value64_max_bit_len(size)
 #endif
 
 
@@ -121,6 +148,11 @@ static void _yx_memPool_basic_slotFree(struct __yx_memPool_slot_s* slot, void* a
 static void _yx_memPool_basic_slotDestory(struct __yx_memPool_basicPool_s* poolContext, struct __yx_memPool_slot_s* slot);
 static struct __yx_memPool_basic_slotBlock_s* _yx_memPool_basic_slotBlockCreate(struct __yx_memPool_basicPool_s* poolContext, yx_size cellSize, yx_size cellNum);
 
+
+
+static struct __yx_memPool_basic_largeBlock_s* _yx_memPool_basic_largeBlockAlloc(struct __yx_memPool_basicPool_s* poolContext, yx_size  size);
+static void _yx_memPool_basic_largeBlockFree(struct __yx_memPool_basicPool_s* poolContext, struct __yx_memPool_basic_largeBlock_s* largeBlock);
+static void _yx_memPool_basic_largeSlotDestory(struct __yx_memPool_basicPool_s* poolContext, struct __yx_memPool_largeSlot_s* largeSlot);
 
 
 /**************************************************************************************************/
@@ -145,6 +177,10 @@ yx_allocator yx_basicMempool_create(yx_allocator allocator){
         context->slot[i].freeList = NULL;
     }
     
+    for(yx_int i=0; i<YX_MEMPOOL_BASIC_LARGERMEMORY_BITSUPPORT; i++){
+        context->largeSlot[i].block = NULL;
+    }
+    
     
     /*setup the alocator*/
     context->allocator = allocator;
@@ -167,8 +203,20 @@ void yx_basicMempool_destroy(yx_allocator* allocator_ptr){
     //check the memory leak
 #if YX_BASICALLOC_DEBUG
     YX_ASSERT(yx_true == isSmallSlutEmpty(poolContext));
+    YX_ASSERT(yx_true == isLargeSlutEmpty(poolContext));
 #endif
     
+    
+    /*
+     the large block mantain struct "__yx_memPool_basic_largeBlock_s" is also allocked from the pool.
+     so, the large block must be released before the pool released!!!!!
+     */
+    
+    /*release the large slot*/
+    for(yx_int i=0; i<YX_MEMPOOL_BASIC_LARGERMEMORY_BITSUPPORT; i++){
+        //actually, the largeSlotList should be empty, otherwise, it's memleak.
+        _yx_memPool_basic_largeSlotDestory(poolContext, &(poolContext->largeSlot[i]));
+    }
     
     /*release all slot*/
     for(yx_int i=0; i<YX_MEMPOOL_BASIC_SMALLMEMORY_SLOTNUM; i++){
@@ -205,22 +253,51 @@ void* yx_basicMempool_alloc(yx_allocator allocator, yx_size size)
         /*set the header info*/
         header->flag = __YX_MEMPOOL_BASIC_PACK_((yx_uint32)slotIndex, 0);
 
+        
+        /*get the mem*/
+        mem = ((yx_byte*)header) + sizeof(struct __yx_memPool_basic_memHeader_s);
     }
     else
     {
+        const yx_size largeSlotTotalSize = (sizeof(struct __yx_memPool_basic_largeBlock_s) + sizeof(struct __yx_memPool_basic_memHeader_s) + size);
+        const yx_int largeBlockIndex = YX_MEMPOOL_BASIC_LARGSLOG_INDEX(largeSlotTotalSize);
         
-        struct __yx_memPool_basic_memHeader_s* header = yx_allocator_alloc(poolContext, sizeof(struct __yx_memPool_basic_memHeader_s) + size);
-        if(yx_unlikely( !header ))
+        
+        //large mem
+        struct __yx_memPool_basic_largeBlock_s* newLargerBlock = _yx_memPool_basic_largeBlockAlloc(allocator, largeSlotTotalSize);
+        if(yx_unlikely( !newLargerBlock ))
             return NULL;
         
-        /*set the header info*/
+        mem = newLargerBlock->alloc;
+        
+        
+        /*setup large block header*/
+        struct __yx_memPool_basic_memHeader_large_s* largeblock_header = mem;
+        largeblock_header->onwer_block = newLargerBlock;
+        
+        /*setup the mem header*/
+        /*set the header's index to -1 .*/
+        mem += sizeof(struct __yx_memPool_basic_memHeader_large_s);
+        struct __yx_memPool_basic_memHeader_s* heade = mem;
         heade->flag = __YX_MEMPOOL_BASIC_PACK_((yx_uint32)largeBlockIndex, YX_MEMPOOL_BASICMEM_TYPE_LARGE);
-
+        
+        
+        /*set the memory*/
+        mem += sizeof(struct __yx_memPool_basic_memHeader_s);
+        
+        
+        
+        /*link the newLargeMem to the large memory linked list*/
+        struct __yx_memPool_basic_largeBlock_s* firstLargeBlock = poolContext->largeSlot[largeBlockIndex].block;
+        newLargerBlock->prev = NULL;
+        if (NULL != firstLargeBlock)
+            firstLargeBlock->prev = newLargerBlock;
+        newLargerBlock->next = firstLargeBlock;
+        poolContext->largeSlot[largeBlockIndex].block = newLargerBlock;
+        
+        
+        
     }
-    
-    /*get the mem*/
-    mem = ((yx_byte*)header) + sizeof(struct __yx_memPool_basic_memHeader_s);
-    
     
     return mem;
 }
@@ -287,33 +364,48 @@ void* yx_basicMempool_memalign(yx_allocator allocator, yx_size alignment, yx_siz
     else{
         //large mem
         
-        void* mem_start = yx_allocator_alloc(poolContext->allocator, totalSize);
-        if (yx_unlikely( !mem_start ))
+        struct __yx_memPool_basic_largeBlock_s* newLargerBlock = _yx_memPool_basic_largeBlockAlloc(allocator, totalSize);
+        if(yx_unlikely( !newLargerBlock ))
             return NULL;
         
-        mem = mem_start;
+        mem = newLargerBlock->alloc;
+        
         
         // dedicate enough space to the book-keeping.
-        mem += sizeof(struct __yx_memPool_basic_memHeader_alignment_s) + sizeof(struct __yx_memPool_basic_memHeader_s);
+        mem += sizeof(struct __yx_memPool_basic_memHeader_large_s) + sizeof(struct __yx_memPool_basic_memHeader_s);
+        
         
         // find a memory location with correct alignment. the alignment minus
         // the remainder of this mod operation is how many bytes forward we need
         // to move to find an aligned byte.
-        //        const size_t offset = alignment - (((size_t)mem) % alignment);
+//        const size_t offset = alignment - (((size_t)mem) % alignment);
         // set data to the aligned memory.
-        //        mem += offset;
+//        mem += offset;
         mem = YX_POINT_ALIGNMENT(mem);
-
         
+        
+        
+        //setup the common header
         struct __yx_memPool_basic_memHeader_s* header = mem - sizeof(struct __yx_memPool_basic_memHeader_s);
         //set the header info
         header->flag = __YX_MEMPOOL_BASIC_PACK_((yx_uint32)slotIndex, YX_MEMPOOL_BASICMEM_TYPE_LARGE | YX_MEMPOOL_BASICMEM_TYPE_ALIGN);
-
         
-        /*setup the alignment header*/
-        struct __yx_memPool_basic_memHeader_alignment_s* alignment_header = (yx_ptr)header - sizeof(struct __yx_memPool_basic_memHeader_alignment_s);
-        alignment_header->pt = mem_start;
-
+        
+        /*setup the large block header*/
+        struct __yx_memPool_basic_memHeader_large_s* largeblock_header = (yx_ptr)header - sizeof(struct __yx_memPool_basic_memHeader_large_s);
+        largeblock_header->onwer_block = newLargerBlock;
+        
+        
+        
+        /*link the newLargeMem to the large memory linked list*/
+        const yx_int largeBlockIndex = YX_MEMPOOL_BASIC_LARGSLOG_INDEX(totalSize);
+        struct __yx_memPool_basic_largeBlock_s* firstLargeBlock = poolContext->largeSlot[largeBlockIndex].block;
+        
+        firstLargeBlock->prev = newLargerBlock;
+        newLargerBlock->next = firstLargeBlock;
+        newLargerBlock->prev = NULL;
+        poolContext->largeSlot[largeBlockIndex].block = newLargerBlock;
+        
     }
     
     return mem;
@@ -342,24 +434,34 @@ void yx_basicMempool_free(yx_allocator allocator, yx_ptr address){
     if (YX_MEMPOOL_BASICMEM_TYPE_LARGE & typeFlag)
     {
         
-        const void* mem;
-        if (YX_MEMPOOL_BASICMEM_TYPE_ALIGN & typeFlag) {
-            //alignment header
-            const struct __yx_memPool_basic_memHeader_alignment_s* alignment_header = (struct __yx_memPool_basic_memHeader_alignment_s*)(header - sizeof(struct __yx_memPool_basic_memHeader_alignment_s));
+        struct __yx_memPool_basic_memHeader_large_s* largeblock_header = (yx_ptr)header - sizeof(struct __yx_memPool_basic_memHeader_large_s);
+        struct __yx_memPool_basic_largeBlock_s* largeBlock = largeblock_header->onwer_block;
+        
+        if (NULL != largeBlock->prev) {
+            largeBlock->prev->next = largeBlock->next;
             
-            mem = alignment_header->pt;
+            if (NULL != largeBlock->next)
+            {
+                largeBlock->next->prev = largeBlock->prev;
+            }
         }
-        else {
-            mem = header;
+        else
+        {
+            struct __yx_memPool_largeSlot_s* largeSlot = &(poolContext->largeSlot[slot_index]);
+            largeSlot->block = largeBlock->next;
+            
+            if (NULL != largeBlock->next) {
+                largeBlock->next->prev = NULL;
+            }
         }
         
+        _yx_memPool_basic_largeBlockFree(poolContext, largeBlock);
         
-        yx_allocator_free(poolContext->allocator, mem);
     }
     else
     {
         
-        const void* mem;
+        void* mem;
         if (YX_MEMPOOL_BASICMEM_TYPE_ALIGN & typeFlag)
         {
             //alignment header
@@ -482,6 +584,50 @@ static struct __yx_memPool_basic_slotBlock_s* _yx_memPool_basic_slotBlockCreate(
     return slotBlock;
 }
 
+static struct __yx_memPool_basic_largeBlock_s* _yx_memPool_basic_largeBlockAlloc(struct __yx_memPool_basicPool_s* poolContext, yx_size  size){
+    /*alloc the large memory directly*/
+    void* mem = yx_allocator_alloc(poolContext->allocator, size);
+    if(yx_unlikely( !mem ))
+        return NULL;
+    
+    /*alloc the __yx_mempool_largeMem_s from the pool*/
+    struct __yx_memPool_basic_largeBlock_s* newLargeBlock = yx_basicMempool_alloc(poolContext, sizeof(struct __yx_memPool_basic_largeBlock_s));
+    if(yx_unlikely( !newLargeBlock )){
+        yx_allocator_free(poolContext->allocator, mem);
+        return NULL;
+    }
+    
+    /*set new buff to large->alloc*/
+    newLargeBlock->alloc = mem;
+    
+    return newLargeBlock;
+}
+
+static void _yx_memPool_basic_largeBlockFree(struct __yx_memPool_basicPool_s* poolContext, struct __yx_memPool_basic_largeBlock_s* largeBlock){
+    
+    yx_allocator_free(poolContext->allocator, largeBlock->alloc);
+    
+    /*free the largeBlock structure*/
+    yx_basicMempool_free(poolContext, largeBlock);
+}
+
+static void _yx_memPool_basic_largeSlotDestory(struct __yx_memPool_basicPool_s* poolContext, struct __yx_memPool_largeSlot_s* largeSlot){
+    
+    struct __yx_memPool_basic_largeBlock_s* block;
+    
+    block = largeSlot->block;
+    while (NULL != block) {
+        yx_allocator_free(poolContext->allocator, block->alloc);
+        
+        struct __yx_memPool_basic_largeBlock_s* tmpBlock = block;
+        block = block->next;
+        yx_basicMempool_free(poolContext, tmpBlock);
+    }
+}
+
+
+
+
 
 
 /**************************************************************************************************/
@@ -526,6 +672,7 @@ yx_bool isSmallSlutEmpty(yx_handle pool){
         }
         
         
+        
         //verify
         if(allMemInSlot != allMemInFreeList){
             isEmpty = yx_false;
@@ -537,6 +684,21 @@ yx_bool isSmallSlutEmpty(yx_handle pool){
     return isEmpty;
 }
 
+
+yx_bool isLargeSlutEmpty(yx_handle pool){
+    
+    yx_bool isEmpty = yx_true;
+    
+    const struct __yx_memPool_basicPool_s* poolContext = HANDLE2BASICMEMPOOL(pool);
+    for (yx_int i=0; i<YX_MEMPOOL_BASIC_LARGERMEMORY_BITSUPPORT; i++) {
+        if(NULL != poolContext->largeSlot[i].block){
+            isEmpty = yx_false;
+            break;
+        }
+    }
+    
+    return isEmpty;
+}
 
 
 #endif

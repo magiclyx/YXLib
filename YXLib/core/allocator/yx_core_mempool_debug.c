@@ -65,6 +65,11 @@ struct __yx_debug_mempool_context_s_
     struct __yx_debug_mempool_node_s_* used_list;
     struct __yx_debug_mempool_node_s_* free_list;
     
+#if YX_MUTTHREAD
+    yx_os_thread_mutex mutex;
+#endif
+    
+    
     /*optional*/
     yx_bool enable_assertion;
     
@@ -102,6 +107,14 @@ yx_allocator yx_debugMempool_create(yx_allocator allocator, yx_uint node_num)
     if (NULL == context)
         goto errout;
     
+    /*mutex*/
+#if YX_MUTTHREAD
+     yx_bool initMutex = NO;
+     if(0 != yx_os_pthread_mutex_init(&context->mutex))
+         goto errout;
+     initMutex = yx_true;
+#endif
+    
     
     /*expand node num*/
     context->next_expand_num = node_num > 0? node_num : YXDEBUGPOOL_EXPAND_DEFAULT_NUM;
@@ -135,9 +148,6 @@ yx_allocator yx_debugMempool_create(yx_allocator allocator, yx_uint node_num)
     
     
     
-    
-    
-    
     /*add free node into empty_list*/
     _expand_free_list(context);
     
@@ -155,6 +165,13 @@ errout:
         if (NULL != context->free_list) {
             _destroy_list(allocator, &(context->free_list));
         }
+        
+#if YX_MUTTHREAD
+        if (yx_false == initMutex) {
+            yx_os_pthread_mutex_recycle(&(context->mutex))
+        }
+#endif
+
         
         yx_allocator_free(allocator, context);
     }
@@ -204,11 +221,16 @@ void yx_debugMempool_destroy(yx_allocator* allocator_ptr)
     }
     
     
-    
-    
-    
     _destroy_list(allocator, &(context->used_list));
     _destroy_list(allocator, &(context->free_list));
+    
+    
+#if YX_MUTTHREAD
+    if (yx_false == initMutex) {
+        yx_os_pthread_mutex_recycle(&(context->mutex))
+    }
+#endif
+
     
     yx_allocator_free(allocator, context);
 }
@@ -224,6 +246,9 @@ void* yx_debugMempool_memalign(yx_allocator allocator, yx_size alignment, yx_siz
     YX_ASSERT(NULL != allocator);
     struct __yx_debug_mempool_context_s_* context = (struct __yx_debug_mempool_context_s_*)(allocator);
     
+#if YX_MUTTHREAD
+    yx_os_pthread_mutex_lock(&(context->mutex));
+#endif
     
     /*expand the free list if need*/
     if (yx_true == _is_list_empty(context->free_list)) {
@@ -246,7 +271,7 @@ void* yx_debugMempool_memalign(yx_allocator allocator, yx_size alignment, yx_siz
     
     void* mem_start = yx_allocator_alloc(context->allocator, totalSize);
     if (NULL == mem_start)
-        return NULL;
+        goto errout;
     
     // dedicate enough space to the book-keeping.
     void* mem = mem_start + sizeof(struct __yx_debug_mempool_node_s_*) + sizeof(__yx_debug_mempool_guard);
@@ -304,7 +329,16 @@ void* yx_debugMempool_memalign(yx_allocator allocator, yx_size alignment, yx_siz
     node->alloced_size = size;
     node->mem_size = totalSize;
     
+    
+#if YX_MUTTHREAD
+    yx_os_pthread_mutex_unlock(&(context->mutex));
+#endif
+
+    
     return mem;
+    
+errout:
+    return NULL;
 }
 
 
@@ -323,6 +357,10 @@ void yx_debugMempool_free(yx_allocator allocator, yx_ptr address)
     /*get owner node*/
     struct __yx_debug_mempool_node_s_* node = *((struct __yx_debug_mempool_node_s_**)mem_offset);
     
+#if YX_MUTTHREAD
+    yx_os_pthread_mutex_lock(&(context->mutex));
+#endif
+
     
     if (yx_false == _verify_the_mode(context, node, address))
     {
@@ -358,6 +396,11 @@ void yx_debugMempool_free(yx_allocator allocator, yx_ptr address)
         
         _insert_node_to_list(context->free_list, node);
     }
+    
+#if YX_MUTTHREAD
+    yx_os_pthread_mutex_unlock(&(context->mutex));
+#endif
+
     
     
 }

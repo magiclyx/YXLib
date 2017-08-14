@@ -79,6 +79,7 @@
 
 /*thread*/
 #include "thread/yx_macosx_thread.h"
+#include "thread/yx_macosx_thread_lock.h"
 
 /*event*/
 #include "event/yx_macosx_event.h"

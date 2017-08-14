@@ -20,6 +20,11 @@ typedef yx_os_thread_mutex* yx_os_thread_mutex_ref;
 
 #if YX_MUTTHREAD
 
+
+#define YX_OS_PTHREAD_MUTEX_DECLARE(name) yx_os_thread_mutex name
+
+
+
 #define yx_os_pthread_mutex_type_declare(name) \
     yx_os_thread_mutex name
 #define yx_os_pthread_mutex_ptr_declare(name) \
@@ -44,6 +49,9 @@ typedef yx_os_thread_mutex* yx_os_thread_mutex_ref;
     pthread_mutex_trylock(&(mutex_ref->mutex))
 
 #else
+
+#define YX_OS_PTHREAD_MUTEX_DECLARE(name)
+
 
 #define yx_os_pthread_mutex_type_declare(name)
 #define yx_os_pthread_mutex_ptr_declare(name)
