@@ -152,12 +152,12 @@ typedef unsigned char    yx_uchar8;
 /**
  define NULL
  */
-#undef NULL
-#if defined(__cplusplus)
-#define NULL 0
-#else
-#define NULL ((void *)0)
-#endif
+//#undef NULL
+//#if defined(__cplusplus)
+//#define NULL 0
+//#else
+//#define NULL ((void *)0)
+//#endif
 
 
 #endif

@@ -36,6 +36,7 @@
 #include <sys/mount.h>
 #include <sys/socket.h>
 #include <signal.h>
+#include <pthread.h>
 
 
 /*MACOSX*/

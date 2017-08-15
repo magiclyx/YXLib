@@ -34,19 +34,19 @@ typedef yx_os_thread_mutex* yx_os_thread_mutex_ref;
     PTHREAD_MUTEX_INITIALIZER
 
 #define yx_os_pthread_mutex_init(mutex_ref) \
-    pthread_mutex_init(&(mutex_ref->mutex), NULL)
+    pthread_mutex_init(&((mutex_ref)->mutex), NULL)
 
 #define yx_os_pthread_mutex_recycle(mutex_ref) \
-    pthread_mutex_destroy(&(mutex_ref->mutex))
+    pthread_mutex_destroy(&((mutex_ref)->mutex))
 
 #define yx_os_pthread_mutex_lock(mutex_ref) \
-    pthread_mutex_lock(&(mutex_ref->mutex))
+    pthread_mutex_lock(&((mutex_ref)->mutex))
 
 #define yx_os_pthread_mutex_unlock(mutex_ref) \
-    pthread_mutex_unlock(&(mutex_ref->mutex))
+    pthread_mutex_unlock(&((mutex_ref)->mutex))
 
 #define yx_os_pthread_mutex_trylock(mutex_ref) \
-    pthread_mutex_trylock(&(mutex_ref->mutex))
+    pthread_mutex_trylock(&((mutex_ref)->mutex))
 
 #else
 

@@ -16,8 +16,8 @@
 		671977AD1F4042C900BFFF1F /* yx_macosx_atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 671977AC1F4042C900BFFF1F /* yx_macosx_atomic.h */; };
 		6726DEBA1F3CC0F800FF1CC7 /* yx_macosx_thread_lock.c in Sources */ = {isa = PBXBuildFile; fileRef = 6726DEB81F3CC0F800FF1CC7 /* yx_macosx_thread_lock.c */; };
 		6726DEBB1F3CC0F800FF1CC7 /* yx_macosx_thread_lock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6726DEB91F3CC0F800FF1CC7 /* yx_macosx_thread_lock.h */; };
-		6726DEBE1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 6726DEBC1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.c */; };
-		6726DEBF1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6726DEBD1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.h */; };
+		676A119B1F435D09005AFF4C /* YXLibUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 676A119A1F435D09005AFF4C /* YXLibUnitTest.m */; };
+		676A119D1F435D09005AFF4C /* libYXLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 678E83391F3B6D3000FBFEED /* libYXLib.a */; };
 		67BF30E31F3B6E5300763D40 /* yx_config_app.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30D91F3B6E5300763D40 /* yx_config_app.h */; };
 		67BF30E41F3B6E5300763D40 /* yx_config_debug.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DA1F3B6E5300763D40 /* yx_config_debug.h */; };
 		67BF30E51F3B6E5300763D40 /* yx_config_environment.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BF30DB1F3B6E5300763D40 /* yx_config_environment.h */; };
@@ -216,6 +216,16 @@
 		C268B9251F3C375000BC7CD7 /* yx_unittest_unittest.h in Headers */ = {isa = PBXBuildFile; fileRef = C268B91C1F3C374F00BC7CD7 /* yx_unittest_unittest.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		676A119E1F435D09005AFF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 678E83311F3B6D3000FBFEED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 678E83381F3B6D3000FBFEED;
+			remoteInfo = YXLib;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		671977971F3F55DB00BFFF1F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -241,8 +251,9 @@
 		671977AC1F4042C900BFFF1F /* yx_macosx_atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_atomic.h; sourceTree = "<group>"; };
 		6726DEB81F3CC0F800FF1CC7 /* yx_macosx_thread_lock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_thread_lock.c; sourceTree = "<group>"; };
 		6726DEB91F3CC0F800FF1CC7 /* yx_macosx_thread_lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_thread_lock.h; sourceTree = "<group>"; };
-		6726DEBC1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yx_macosx_thread_spinlock.c; sourceTree = "<group>"; };
-		6726DEBD1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_macosx_thread_spinlock.h; sourceTree = "<group>"; };
+		676A11981F435D09005AFF4C /* YXLibUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YXLibUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		676A119A1F435D09005AFF4C /* YXLibUnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXLibUnitTest.m; sourceTree = "<group>"; };
+		676A119C1F435D09005AFF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		678E83391F3B6D3000FBFEED /* libYXLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYXLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BF30D91F3B6E5300763D40 /* yx_config_app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_app.h; sourceTree = "<group>"; };
 		67BF30DA1F3B6E5300763D40 /* yx_config_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yx_config_debug.h; sourceTree = "<group>"; };
@@ -450,6 +461,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		676A11951F435D09005AFF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676A119D1F435D09005AFF4C /* libYXLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		678E83361F3B6D3000FBFEED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,11 +491,21 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		676A11991F435D09005AFF4C /* YXLibUnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				676A119A1F435D09005AFF4C /* YXLibUnitTest.m */,
+				676A119C1F435D09005AFF4C /* Info.plist */,
+			);
+			path = YXLibUnitTest;
+			sourceTree = "<group>";
+		};
 		678E83301F3B6D3000FBFEED = {
 			isa = PBXGroup;
 			children = (
 				67BF30D71F3B6DD700763D40 /* YXLib */,
 				6719779A1F3F55DB00BFFF1F /* test */,
+				676A11991F435D09005AFF4C /* YXLibUnitTest */,
 				678E833A1F3B6D3000FBFEED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -486,6 +515,7 @@
 			children = (
 				678E83391F3B6D3000FBFEED /* libYXLib.a */,
 				671977991F3F55DB00BFFF1F /* test */,
+				676A11981F435D09005AFF4C /* YXLibUnitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -769,8 +799,6 @@
 				67BF31491F3B6EC400763D40 /* yx_macosx_thread.h */,
 				6726DEB81F3CC0F800FF1CC7 /* yx_macosx_thread_lock.c */,
 				6726DEB91F3CC0F800FF1CC7 /* yx_macosx_thread_lock.h */,
-				6726DEBC1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.c */,
-				6726DEBD1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.h */,
 				671977A61F3F6C1200BFFF1F /* yx_macosx_spinlock_base.h */,
 				671977A81F40046C00BFFF1F /* yx_macosx_spinlock_raw.h */,
 				671977AA1F40061900BFFF1F /* yx_macosx_spinlock.h */,
@@ -1149,7 +1177,6 @@
 				67BF316B1F3B6EC400763D40 /* yx_macosx_file_link.h in Headers */,
 				67BF31801F3B6EC400763D40 /* yx_macosx_char.h in Headers */,
 				67BF31621F3B6EC400763D40 /* yx_macosx_file.h in Headers */,
-				6726DEBF1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.h in Headers */,
 				67BF318A1F3B6EC400763D40 /* yx_macosx_system.h in Headers */,
 				67BF318F1F3B6EC400763D40 /* yx_macosx_time.h in Headers */,
 				67BF31641F3B6EC400763D40 /* yx_macosx_file_access.h in Headers */,
@@ -1235,6 +1262,24 @@
 			productReference = 671977991F3F55DB00BFFF1F /* test */;
 			productType = "com.apple.product-type.tool";
 		};
+		676A11971F435D09005AFF4C /* YXLibUnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 676A11A21F435D09005AFF4C /* Build configuration list for PBXNativeTarget "YXLibUnitTest" */;
+			buildPhases = (
+				676A11941F435D09005AFF4C /* Sources */,
+				676A11951F435D09005AFF4C /* Frameworks */,
+				676A11961F435D09005AFF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				676A119F1F435D09005AFF4C /* PBXTargetDependency */,
+			);
+			name = YXLibUnitTest;
+			productName = YXLibUnitTest;
+			productReference = 676A11981F435D09005AFF4C /* YXLibUnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		678E83381F3B6D3000FBFEED /* YXLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 678E833D1F3B6D3000FBFEED /* Build configuration list for PBXNativeTarget "YXLib" */;
@@ -1266,6 +1311,11 @@
 						DevelopmentTeam = 7EXK732QC2;
 						ProvisioningStyle = Automatic;
 					};
+					676A11971F435D09005AFF4C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7EXK732QC2;
+						ProvisioningStyle = Automatic;
+					};
 					678E83381F3B6D3000FBFEED = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 7EXK732QC2;
@@ -1287,9 +1337,20 @@
 			targets = (
 				678E83381F3B6D3000FBFEED /* YXLib */,
 				671977981F3F55DB00BFFF1F /* test */,
+				676A11971F435D09005AFF4C /* YXLibUnitTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		676A11961F435D09005AFF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		671977951F3F55DB00BFFF1F /* Sources */ = {
@@ -1299,6 +1360,14 @@
 				671977A21F3F5E0200BFFF1F /* spinlockX.c in Sources */,
 				6719779C1F3F55DB00BFFF1F /* main.m in Sources */,
 				671977A51F3F6B8400BFFF1F /* baseSpinLock.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		676A11941F435D09005AFF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676A119B1F435D09005AFF4C /* YXLibUnitTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,7 +1422,6 @@
 				67BF31751F3B6EC400763D40 /* yx_macosx_process.c in Sources */,
 				C268B8B11F3C36E000BC7CD7 /* yx_core_communicator_pipe.c in Sources */,
 				C268B90A1F3C36E000BC7CD7 /* yx_core_refstring.c in Sources */,
-				6726DEBE1F3CC73400FF1CC7 /* yx_macosx_thread_spinlock.c in Sources */,
 				C268B89A1F3C36E000BC7CD7 /* yx_core_mempool_basic.c in Sources */,
 				67BF31631F3B6EC400763D40 /* yx_macosx_file_access.c in Sources */,
 				C268B8FA1F3C36E000BC7CD7 /* yx_core_module.c in Sources */,
@@ -1380,6 +1448,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		676A119F1F435D09005AFF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 678E83381F3B6D3000FBFEED /* YXLib */;
+			targetProxy = 676A119E1F435D09005AFF4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		6719779D1F3F55DB00BFFF1F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1393,6 +1469,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 7EXK732QC2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		676A11A01F435D09005AFF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7EXK732QC2;
+				INFOPLIST_FILE = YXLibUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiren.app.YXLibUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		676A11A11F435D09005AFF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7EXK732QC2;
+				INFOPLIST_FILE = YXLibUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiren.app.YXLibUnitTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1512,6 +1612,15 @@
 			buildConfigurations = (
 				6719779D1F3F55DB00BFFF1F /* Debug */,
 				6719779E1F3F55DB00BFFF1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		676A11A21F435D09005AFF4C /* Build configuration list for PBXNativeTarget "YXLibUnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				676A11A01F435D09005AFF4C /* Debug */,
+				676A11A11F435D09005AFF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

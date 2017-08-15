@@ -99,6 +99,9 @@ static yx_bool _verify_the_mode(struct __yx_debug_mempool_context_s_* context, _
 yx_allocator yx_debugMempool_create(yx_allocator allocator, yx_uint node_num)
 {
     struct __yx_debug_mempool_context_s_* context = NULL;
+#if YX_MUTTHREAD
+    yx_bool initMutex = yx_false;
+#endif
     
     if (NULL == allocator)
         allocator = yx_get_allocator();
@@ -109,8 +112,8 @@ yx_allocator yx_debugMempool_create(yx_allocator allocator, yx_uint node_num)
     
     /*mutex*/
 #if YX_MUTTHREAD
-     yx_bool initMutex = NO;
-     if(0 != yx_os_pthread_mutex_init(&context->mutex))
+     initMutex = yx_false;
+     if(0 != yx_os_pthread_mutex_init(&(context->mutex)))
          goto errout;
      initMutex = yx_true;
 #endif
@@ -168,7 +171,7 @@ errout:
         
 #if YX_MUTTHREAD
         if (yx_false == initMutex) {
-            yx_os_pthread_mutex_recycle(&(context->mutex))
+            yx_os_pthread_mutex_recycle(&(context->mutex));
         }
 #endif
 
@@ -226,9 +229,7 @@ void yx_debugMempool_destroy(yx_allocator* allocator_ptr)
     
     
 #if YX_MUTTHREAD
-    if (yx_false == initMutex) {
-        yx_os_pthread_mutex_recycle(&(context->mutex))
-    }
+    yx_os_pthread_mutex_recycle(&(context->mutex));
 #endif
 
     

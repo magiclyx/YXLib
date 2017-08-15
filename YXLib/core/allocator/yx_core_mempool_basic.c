@@ -194,11 +194,12 @@ void* yx_basicMempool_alloc(yx_allocator allocator, yx_size size)
     
     const yx_size guassSlotTotalSize = (sizeof(struct __yx_memPool_basic_memHeader_s) + size);
     yx_int slotIndex = (yx_int)YX_MEMPOOL_BASIC_SLOT_INDEX(guassSlotTotalSize);
+    struct __yx_memPool_basic_memHeader_s* header;
     if(yx_likely( slotIndex < YX_MEMPOOL_BASIC_SMALLMEMORY_SLOTNUM ))
     {
         
         
-        struct __yx_memPool_basic_memHeader_s* header = _yx_memPool_basic_slotAlloc(poolContext, &(poolContext->slot[slotIndex]), slotIndex);
+        header = _yx_memPool_basic_slotAlloc(poolContext, &(poolContext->slot[slotIndex]), slotIndex);
         if(yx_unlikely( !header ))
             return NULL;
         
@@ -209,12 +210,12 @@ void* yx_basicMempool_alloc(yx_allocator allocator, yx_size size)
     else
     {
         
-        struct __yx_memPool_basic_memHeader_s* header = yx_allocator_alloc(poolContext, sizeof(struct __yx_memPool_basic_memHeader_s) + size);
+        header = yx_allocator_alloc(poolContext, sizeof(struct __yx_memPool_basic_memHeader_s) + size);
         if(yx_unlikely( !header ))
             return NULL;
         
         /*set the header info*/
-        heade->flag = __YX_MEMPOOL_BASIC_PACK_((yx_uint32)largeBlockIndex, YX_MEMPOOL_BASICMEM_TYPE_LARGE);
+        header->flag = __YX_MEMPOOL_BASIC_PACK_((yx_uint32)0, YX_MEMPOOL_BASICMEM_TYPE_LARGE);
 
     }
     
@@ -342,7 +343,7 @@ void yx_basicMempool_free(yx_allocator allocator, yx_ptr address){
     if (YX_MEMPOOL_BASICMEM_TYPE_LARGE & typeFlag)
     {
         
-        const void* mem;
+        void* mem;
         if (YX_MEMPOOL_BASICMEM_TYPE_ALIGN & typeFlag) {
             //alignment header
             const struct __yx_memPool_basic_memHeader_alignment_s* alignment_header = (struct __yx_memPool_basic_memHeader_alignment_s*)(header - sizeof(struct __yx_memPool_basic_memHeader_alignment_s));
@@ -359,7 +360,7 @@ void yx_basicMempool_free(yx_allocator allocator, yx_ptr address){
     else
     {
         
-        const void* mem;
+        void* mem;
         if (YX_MEMPOOL_BASICMEM_TYPE_ALIGN & typeFlag)
         {
             //alignment header
