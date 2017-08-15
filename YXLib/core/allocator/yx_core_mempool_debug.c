@@ -338,6 +338,12 @@ void* yx_debugMempool_memalign(yx_allocator allocator, yx_size alignment, yx_siz
     return mem;
     
 errout:
+    
+#if YX_MUTTHREAD
+    yx_os_pthread_mutex_unlock(&(context->mutex));
+#endif
+
+    
     return NULL;
 }
 
@@ -364,7 +370,6 @@ void yx_debugMempool_free(yx_allocator allocator, yx_ptr address)
     
     if (yx_false == _verify_the_mode(context, node, address))
     {
-        /**/
     }
     else
     {

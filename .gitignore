@@ -1,0 +1,18 @@
+
+# windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# MacOS
+.DS_Store
+*.swp
+
+# python
+*.pyc
+*.so
+*.egg
+*.egg-info
+.idea
+
+# project
