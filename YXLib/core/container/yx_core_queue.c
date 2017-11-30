@@ -123,6 +123,7 @@ void yx_core_queue_recycle(yx_core_queue_ptr queue)
 /*push*/
 void yx_core_queue_push(yx_core_queue_ptr queue, yx_value data)
 {
+    
     yx_core_queuenode_wrapper_ref new_node;
     
     new_node = yx_allocator_alloc(queue->node_allocator, sizeof(struct yx_core_queuenode_wrapper));
@@ -141,14 +142,16 @@ void yx_core_queue_push(yx_core_queue_ptr queue, yx_value data)
 /*pop*/
 void yx_core_queue_pop(yx_core_queue_ptr queue)
 {
+
     yx_core_queuenode_wrapper_ref node = yx_core_queuenode_firstNodeOwner(&(queue->head), struct yx_core_queuenode_wrapper, node);
+    
+    yx_core_queuenode_pop(&(queue->head));
+    queue->count--;
     
     if (NULL != queue->del_callback)
         queue->del_callback(node->data);
     
-    
     yx_allocator_free(queue->node_allocator, node);
-    queue->count--;
 }
 
 

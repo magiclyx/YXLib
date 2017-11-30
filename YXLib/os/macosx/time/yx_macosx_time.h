@@ -26,6 +26,9 @@ typedef yx_uint64 yx_os_tick;  /*ticket*/
 typedef yx_real   yx_os_time;  /*时间*/
 typedef struct tm yx_os_date;  /*日期*/
 
+typedef struct timeval yx_os_timeval; /*posix 指定的时间结构, 第二个属性是毫秒*/
+typedef struct timespec yx_os_timespec; /*posix 指定的时间结构, 第二个属性是纳秒*/
+
 /*
  时间细分
  */
@@ -153,9 +156,57 @@ yx_os_date* yx_os_date_now(yx_bool isUTC){
 #define yx_os_date_dayInYear(date_ptr)       ((date_ptr)->tm_yday)  /* days since January 1 [0-365] */
 
 
+#pragma mark posix time struct
+
+/*
+ time_spec_ref 将带回当前系统时间，从UTC1970-1-1 0:0:0开始计时
+ 第二个参数time_zone，带回当前的时区信息，如果不需要刻意设置为0
+ timezone结构描述如下：
+ struct timezone
+ {
+ int tz_minuteswest;  //和格林威治 时间差了多少分钟
+ int tz_dsttime;  //日光节约时间的状态（夏时制）
+ };
+ */
+#define yx_os_timeval_now(timeval_ref) gettimeofday(timeval_ref, 0)
+
+/*用于计算 timeval offset的。 offset 是 yx_real 类型 */
+#define yx_os_timeval_offset(timeval_ref, offset) \
+do{\
+yx_os_timeval_now(timeval_ref); \
+timeval_ref->tv_sec += (yx_int)offset; \
+timeval_ref->tv_usec += yx_os_sec2usec(offset - 1); \
+}while(0)
+
+
+
+/*
+ 第一个参数，获取制定的时间
+ 1. CLOCK_REALTIME:系统实时时间,随系统实时时间改变而改变,即从UTC1970-1-1 0:0:0开始计时,如果系统时间被用户改成其他,则对应的时间相应改变
+ 2. CLOCK_REALTIME_COARSE：和CLOCK_REALTIME类似，但是执行速度快，精度低
+ 3. CLOCK_MONOTONIC:从系统启动这一刻起开始计时,不受系统时间被用户改变的影响
+ 4. CLOCK_MONOTONIC_COARSE ：和CLOCK_MONOTONIC类似，但是执行速度快，精度低
+ 5. CLOCK_BOOTTIME：和　　CLOCK_MONOTONIC 类似，但是包括了系统休眠的时间
+ 6. CLOCK_PROCESS_CPUTIME_ID:本进程到当前代码系统CPU花费的时间
+ 7. CLOCK_THREAD_CPUTIME_ID:本线程到当前代码系统CPU花费的时间
+ 
+ 第二个参数，带回第一个参数指定的时间
+ */
+#define yx_os_timespec_now(timespec_ref) clock_gettime(CLOCK_REALTIME, timespec_ref)
+
+
+/*用于计算 timespec offset的。 offset 是 yx_real 类型 */
+#define yx_os_timespec_offset(timespec_ref, offset) \
+do{ \
+yx_os_timespec_now(timespec_ref); \
+(timespec_ref)->tv_sec += (int)offset; \
+(timespec_ref)->tv_nsec += yx_os_sec2nsec(offset - 1); \
+}while(0)
+
+
+
 
 #endif
-
 
 
 

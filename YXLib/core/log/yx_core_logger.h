@@ -9,7 +9,7 @@
 #ifndef yx_core_logger_h
 #define yx_core_logger_h
 
-#include "yx_core_global.h"
+#include "../yx_core_global.h"
 #include "yx_core_logger_def.h"
 #include "yx_core_logger_rule.h"
 

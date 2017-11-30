@@ -146,7 +146,7 @@ void yx_core_list_insertTail(yx_core_list_ref list, yx_value data)
     new_node->data = data;
     
     yx_core_listnode_insertTail(&(list->list), &(new_node->node));
-    list->count--;
+    list->count++;
     
 }
 

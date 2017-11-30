@@ -21,52 +21,52 @@ typedef yx_os_thread_mutex* yx_os_thread_mutex_ref;
 #if YX_MUTTHREAD
 
 
+/*declare*/
 #define YX_OS_PTHREAD_MUTEX_DECLARE(name) yx_os_thread_mutex name
+#define yx_os_pthread_mutex_type_declare(name)  yx_os_thread_mutex name
+#define yx_os_pthread_mutex_ptr_declare(name)  yx_os_thread_mutex_ref name
 
+//#define yx_os_pthread_mutex_static  PTHREAD_MUTEX_INITIALIZER
 
+/*mutex*/
+#define yx_os_pthread_mutex_mutex(mutex_ref) (mutex_ref)->mutex
+#define yx_os_pthread_mutex_mutexRef(mutex_ref) &((mutex_ref)->mutex)
 
-#define yx_os_pthread_mutex_type_declare(name) \
-    yx_os_thread_mutex name
-#define yx_os_pthread_mutex_ptr_declare(name) \
-    yx_os_thread_mutex_ref name
+/*init & destroy*/
+#define yx_os_pthread_mutex_init(mutex_ref)  pthread_mutex_init(&((mutex_ref)->mutex), NULL)
+#define yx_os_pthread_mutex_recycle(mutex_ref)  pthread_mutex_destroy(&((mutex_ref)->mutex))
 
-#define yx_os_pthread_mutex_static \
-    PTHREAD_MUTEX_INITIALIZER
+/*lock*/
+#define yx_os_pthread_mutex_lock(mutex_ref)  pthread_mutex_lock(&((mutex_ref)->mutex))
+#define yx_os_pthread_mutex_trylock(mutex_ref)  pthread_mutex_trylock(&((mutex_ref)->mutex))
 
-#define yx_os_pthread_mutex_init(mutex_ref) \
-    pthread_mutex_init(&((mutex_ref)->mutex), NULL)
-
-#define yx_os_pthread_mutex_recycle(mutex_ref) \
-    pthread_mutex_destroy(&((mutex_ref)->mutex))
-
-#define yx_os_pthread_mutex_lock(mutex_ref) \
-    pthread_mutex_lock(&((mutex_ref)->mutex))
-
-#define yx_os_pthread_mutex_unlock(mutex_ref) \
-    pthread_mutex_unlock(&((mutex_ref)->mutex))
-
-#define yx_os_pthread_mutex_trylock(mutex_ref) \
-    pthread_mutex_trylock(&((mutex_ref)->mutex))
+/*unlock*/
+#define yx_os_pthread_mutex_unlock(mutex_ref)  pthread_mutex_unlock(&((mutex_ref)->mutex))
 
 #else
 
+/*declare*/
 #define YX_OS_PTHREAD_MUTEX_DECLARE(name)
-
-
 #define yx_os_pthread_mutex_type_declare(name)
 #define yx_os_pthread_mutex_ptr_declare(name)
 
 #define yx_os_pthread_mutex_static
 
-#define yx_os_pthread_mutex_init(mutex_ref)
+/*mutex*/
+#define yx_os_pthread_mutex_mutex(mutex_ref)
 
+
+/*init & destroy*/
+#define yx_os_pthread_mutex_init(mutex_ref)
 #define yx_os_pthread_mutex_recycle(mutex_ref)
 
+/*lock*/
 #define yx_os_pthread_mutex_lock(mutex_ref)
+#define yx_os_pthread_mutex_trylock(mutex_ref)
 
+/*unlock*/
 #define yx_os_pthread_mutex_unlock(mutex_ref)
 
-#define yx_os_pthread_mutex_trylock(mutex_ref)
 
 
 #endif

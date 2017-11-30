@@ -9,7 +9,7 @@
 #include "yx_core_communicator.h"
 #include "../debug/yx_core_assert.h"
 
-#include "yx_core_communicator_pipe.h"
+#include "implementation/yx_core_communicator_pipe.h"
 
 
 

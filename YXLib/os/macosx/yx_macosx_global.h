@@ -35,6 +35,7 @@
 #include <sys/sysctl.h>
 #include <sys/mount.h>
 #include <sys/socket.h>
+#include <sys/semaphore.h>
 #include <signal.h>
 #include <pthread.h>
 

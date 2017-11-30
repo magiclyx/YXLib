@@ -25,7 +25,7 @@ struct yx_core_hashtable_bucket{
 
 typedef struct yx_core_hashtable_bucket* yx_core_hashtable_bucket_ref;
 
-struct yx_core_hashtable {
+typedef struct yx_core_hashtable {
     yx_rtti rtti;
     
     yx_allocator allocator;
@@ -40,7 +40,7 @@ struct yx_core_hashtable {
     yx_value (*keycopy_callback)(yx_value key); //use to copy a key
     
     void (*del_callback)(yx_value key, yx_value value); //use to release data's buff
-};
+}yx_core_hashtable;
 
 typedef struct yx_core_hashtable* yx_core_hashtable_ref;
 

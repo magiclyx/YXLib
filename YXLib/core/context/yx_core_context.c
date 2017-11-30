@@ -8,7 +8,6 @@
 
 #include "yx_core_context.h"
 #include "../debug/yx_core_assert.h"
-#include "../module/yx_core_module.h"
 
 #if YX_MEM_VERIFY
     #include "../allocator/yx_core_mempool_debug.h"
@@ -60,7 +59,6 @@ yx_bool yx_core_context_init(void)
     
     //others..
     //
-    core_context.rootmodule = &yx_core_rootModule;
 
     
     return yx_true;

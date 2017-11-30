@@ -11,7 +11,7 @@
 
 #include "yx_core_queuenode.h"
 
-struct yx_core_queue{
+typedef struct yx_core_queue{
     yx_rtti rtti;
 
     yx_allocator allocator;
@@ -21,7 +21,7 @@ struct yx_core_queue{
     yx_ulong count;
     
     void (*del_callback)(yx_value data);
-};
+}yx_core_queue;
 
 typedef struct yx_core_queue* yx_core_queue_ptr;
 
@@ -63,6 +63,7 @@ void yx_core_queue_recycle(yx_core_queue_ptr queue);
 void yx_core_queue_push(yx_core_queue_ptr queue, yx_value data);
 
 /*pop*/
+//线调用 yx_core_queue_first 取第一个
 void yx_core_queue_pop(yx_core_queue_ptr queue);
 
 

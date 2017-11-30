@@ -63,8 +63,8 @@ void yx_core_list_insertTailFromList(yx_core_list_ref list, yx_core_list_ref ano
 /**
  state
  */
-#define yx_core_list_isEmpty(list)  yx_core_listnode_isEmpty(&(list->list))
-#define yx_core_list_count(list) ((list)->count)
+#define yx_core_list_isEmpty(listRef)  yx_core_listnode_isEmpty(&((listRef)->list))
+#define yx_core_list_count(listRef) ((listRef)->count)
 
 
 /**
@@ -83,7 +83,26 @@ void yx_core_list_removeFirstObject(yx_core_list_ref list);
 void yx_core_list_removeLastObject(yx_core_list_ref list);
 
 
+/*
+ wrapper as queue or stack
+ */
 
+#define yx_core_list_pushPtl(listRef, pt) yx_core_list_insertHead(listRef, (unsigned long)pt)
+#define yx_core_list_pushPtr(listRef, pt) yx_core_list_insertTail(listRef, (unsigned long)pt)
+
+yx_forceinline void* yx_core_list_popPtl(yx_core_list_ref list){
+    yx_value data = yx_core_list_firstObject(list, (unsigned long)NULL);
+    if ((unsigned long)NULL != data)
+        yx_core_list_removeFirstObject(list);
+    return (void*)data;
+}
+
+yx_forceinline void* yx_core_list_popPtr(yx_core_list_ref list){
+    yx_value data = yx_core_list_lastObject(list, (unsigned long)NULL);
+    if ((unsigned long)NULL != data)
+        yx_core_list_removeLastObject(list);
+    return (void*)data;
+}
 
 
 
