@@ -84,6 +84,7 @@
 #include "thread/yx_macosx_thread_rwlock.h"
 #include "thread/yx_macosx_thread_cond.h"
 #include "thread/yx_macosx_thread_event.h"
+#include "thread/yx_macosx_thread_file.h"
 
 /*event*/
 #include "event/yx_macosx_event.h"
