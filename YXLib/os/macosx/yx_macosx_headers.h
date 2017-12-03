@@ -79,6 +79,7 @@
 
 /*thread*/
 #include "thread/yx_macosx_thread.h"
+#include "thread/yx_macosx_spinlock.h"
 #include "thread/yx_macosx_thread_lock.h"
 #include "thread/yx_macosx_thread_rwlock.h"
 #include "thread/yx_macosx_thread_cond.h"

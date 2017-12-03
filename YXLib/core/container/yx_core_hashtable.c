@@ -7,7 +7,7 @@
 //
 
 #include "yx_core_hashtable.h"
-#include "../allocator/yx_core_mempool_cell.h"
+#include "../allocator/yx_core_membucket.h"
 #include "../rttidef/yx_core_rttidef.h"
 #include "yx_core_hashPrime.h"
 #include "../debug/yx_core_assert.h"
@@ -49,10 +49,10 @@ void yx_core_hashtable_init(yx_allocator allocator, yx_core_hashtable_ref hashta
     hashtable->allocator = allocator;
     
     /*setup the node allocator*/
-    yx_os_rtti_if(allocator, yx_rtti_allocator_buf)
+    yx_os_rtti_if(allocator, yx_rtti_allocator_memsection)
     {
         /*因为是bufpool, 所以这个cellMempool不会被释放*/
-        hashtable->node_allocator = yx_cellMempool_create(allocator, sizeof(struct yx_core_hashtable_bucket));
+        hashtable->node_allocator = yx_membucket_create(allocator, sizeof(struct yx_core_hashtable_bucket));
     }
     else {
         hashtable->node_allocator = allocator;
@@ -98,7 +98,7 @@ void yx_core_hashtable_destroy(yx_core_hashtable_ref* hashtable_ptr)
 
 void yx_core_hashtable_recycle(yx_core_hashtable_ref hashtable)
 {
-    yx_os_rtti_notif(hashtable->allocator, yx_rtti_allocator_buf)
+    yx_os_rtti_notif(hashtable->allocator, yx_rtti_allocator_memsection)
     {
         for (yx_long_index index = 0; hashtable->max_size; index++)
         {

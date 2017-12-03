@@ -8,7 +8,7 @@
 
 #include "yx_core_childprocmanager.h"
 #include "../rttidef/yx_core_rttidef.h"
-#include "../allocator/yx_core_mempool_cell.h"
+#include "../allocator/yx_core_membucket.h"
 
 
 
@@ -21,9 +21,9 @@ yx_bool yx_core_childprocmanager_init(yx_allocator allocator, yx_core_childprocm
     
     manager->allocator = allocator;
     /*setup the node allocator*/
-    yx_os_rtti_if(allocator, yx_rtti_allocator_buf) {
+    yx_os_rtti_if(allocator, yx_rtti_allocator_memsection) {
         /*因为是bufpool, 所以这个cellMempool不会被释放*/
-        manager->proc_allocator = yx_cellMempool_create(allocator, sizeof(struct yx_core_listnode_wrapper));
+        manager->proc_allocator = yx_membucket_create(allocator, sizeof(struct yx_core_listnode_wrapper));
     }
     else
     {

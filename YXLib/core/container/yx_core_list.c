@@ -10,7 +10,7 @@
 
 #include "../rttidef/yx_core_rttidef.h"
 #include "../debug/yx_core_assert.h"
-#include "../allocator/yx_core_mempool_cell.h"
+#include "../allocator/yx_core_membucket.h"
 
 
 
@@ -40,9 +40,9 @@ void yx_core_list_init(yx_allocator allocator, yx_core_list_ref list)
     
     
     /*setup the node allocator*/
-    yx_os_rtti_if(allocator, yx_rtti_allocator_buf) {
+    yx_os_rtti_if(allocator, yx_rtti_allocator_memsection) {
         /*因为是bufpool, 所以这个cellMempool不会被释放*/
-        list->node_allocator = yx_cellMempool_create(allocator, sizeof(struct yx_core_listnode_wrapper));
+        list->node_allocator = yx_membucket_create(allocator, sizeof(struct yx_core_listnode_wrapper));
     }
     else {
         list->node_allocator = allocator;
@@ -74,7 +74,7 @@ void yx_core_list_destroy(yx_core_list_ref* list_ptr)
 
 void yx_core_list_recycle(yx_core_list_ref list)
 {
-    yx_os_rtti_notif(list->allocator, yx_rtti_allocator_buf)
+    yx_os_rtti_notif(list->allocator, yx_rtti_allocator_memsection)
     {
         /*其他内存池，正常释放*/
         

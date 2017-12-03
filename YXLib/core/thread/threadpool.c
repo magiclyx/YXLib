@@ -11,6 +11,7 @@
 #include <pthread.h>
 #include <stdio.h>
 #include "../container/thread/yx_core_threadresource_queue.h"
+#include "../allocator/thread/yx_core_tsmembucket.h"
 
 #define THREAD_POOL_DEBUG
 
@@ -20,8 +21,7 @@
 #define REPORT_ERROR(...)
 #endif /* THREAD_POOL_DEBUG */
 
-#define THREAD_POOL_QUEUE_SIZE 10000
-
+#define THREAD_POOL_DEFAULT_TASK_NUM 2
 
 #define yx_core_threadpool_refHandle2Impl(h) ((threadpoolRef)h)
 
@@ -30,29 +30,25 @@ struct threadpool_task
 	void (*routine_cb)(void*);
 
 	void *data;
-};
+}threadpool_task;
+
+typedef struct threadpool_task* threadpool_task_ref;
 
 
 typedef struct threadpool
 {
     yx_allocator allocator;
-	struct threadpool_task tasks[THREAD_POOL_QUEUE_SIZE];
-
-	pthread_t *thr_arr;
-
-	unsigned short num_of_threads;
+    yx_allocator freetask_bucket;
+    
 	volatile yx_bool stop_flag;
 
-    yx_core_resource_queue free_tasks_queue;
+	unsigned short num_of_threads;
+    yx_os_thread* thread_array;
+//	pthread_t *thr_arr;
+
     yx_core_resource_queue tasks_queue;
 }*threadpoolRef;
 
-
-static void threadpool_task_init(struct threadpool_task *task)
-{
-	task->data = NULL;
-	task->routine_cb = NULL;
-}
 
 
 static struct threadpool_task* threadpool_task_get_task(struct threadpool *pool)
@@ -104,11 +100,8 @@ static void *worker_thr_routine(void *data)
 		/* Execute routine (if any). */
 		if (task->routine_cb) {
 			task->routine_cb(task->data);
-
-			/* Release the task by returning it to the free_task_queue. */
-			threadpool_task_init(task);
-            yx_core_resource_queue_add(&(pool->free_tasks_queue), (yx_value)task);
             
+            yx_tsmembucket_free(pool->freetask_bucket, task);
 		}
 	}
 
@@ -116,27 +109,35 @@ static void *worker_thr_routine(void *data)
 }
 
 
-static void *stop_worker_thr_routines_cb(void *ptr)
+static void *stop_worker_thr_routines_cb(void *ptr, yx_bool blocking)
 {
 	yx_int i;
 	struct threadpool *pool = (struct threadpool*)ptr;
 
     pool->stop_flag = yx_true;
-    yx_core_resource_queue_stop(&(pool->free_tasks_queue));
     yx_core_resource_queue_stop(&(pool->tasks_queue));
+    
+    /*强制 cancel*/
+    if (yx_false == blocking) {
+        for (i = 0; i < pool->num_of_threads; i++)
+            yx_os_thread_cancel(&(pool->thread_array[i]));
+    }
 
 	/* Wait until all worker threads are done. */
 	for (i = 0; i < pool->num_of_threads; i++) {
-		if (pthread_join(pool->thr_arr[i],NULL)) {
+		if (yx_os_thread_join(&(pool->thread_array[i]), NULL)) {
 			perror("pthread_join: ");
 		}
 	}
     
-    yx_core_resource_queue_recycle(&(pool->free_tasks_queue));
     yx_core_resource_queue_recycle(&(pool->tasks_queue));
+    
+    
+    /*free the free task bucket*/
+    yx_tsmembucket_destroy(&(pool->freetask_bucket));
 
 	/* Free all allocated memory. */
-    yx_allocator_free(pool->allocator, pool->thr_arr);
+    yx_allocator_free(pool->allocator, pool->thread_array);
     yx_allocator_free(pool->allocator, pool);
 
 	return NULL;
@@ -159,21 +160,25 @@ yx_core_threadpool_ref yx_core_threadpool_create(yx_allocator allocator, yx_int 
     pool->allocator = allocator;
 
 	pool->stop_flag = yx_false;
+    
+    
+    /* Init the bucket allocator */
+    pool->freetask_bucket = yx_tsmembucket_create(allocator, sizeof(struct threadpool_task));
 
-	/* Init the jobs queue. */
-    yx_core_resource_queue_init(allocator, &(pool->free_tasks_queue));
 	/* Init the free tasks queue. */
     yx_core_resource_queue_init(allocator, &(pool->tasks_queue));
     
     
-	/* Add all the free tasks to the free tasks queue. */
-	for (i = 0; i < THREAD_POOL_QUEUE_SIZE; i++) {
-		threadpool_task_init((pool->tasks) + i);
-        yx_core_resource_queue_add(&(pool->free_tasks_queue), (yx_value)((pool->tasks) + i));
-	}
+    /*warmup the tasks bucket*/
+    threadpool_task_ref task_array[THREAD_POOL_DEFAULT_TASK_NUM];
+    for (i = 0; i< THREAD_POOL_DEFAULT_TASK_NUM; i++)
+        task_array[i] = yx_tsmembucket_alloc(pool->freetask_bucket);
+    for (i = 0; i< THREAD_POOL_DEFAULT_TASK_NUM; i++)
+        yx_tsmembucket_free(pool->freetask_bucket, task_array[i]);
 
+    
 	/* Create the thr_arr. */
-	if ((pool->thr_arr = (pthread_t*)yx_allocator_alloc(allocator, sizeof(pthread_t) * num_of_threads)) == NULL) {
+	if ((pool->thread_array = (yx_os_thread_ref)yx_allocator_alloc(allocator, sizeof(yx_os_thread) * num_of_threads)) == NULL) {
 		perror("malloc: ");
         yx_allocator_free(allocator, pool);
 		return NULL;
@@ -181,7 +186,8 @@ yx_core_threadpool_ref yx_core_threadpool_create(yx_allocator allocator, yx_int 
 
 	/* Start the worker threads. */
 	for (pool->num_of_threads = 0; pool->num_of_threads < num_of_threads; (pool->num_of_threads)++) {
-		if (pthread_create(&(pool->thr_arr[pool->num_of_threads]),NULL,worker_thr_routine,pool)) {
+        
+		if (yx_os_thread_create(&(pool->thread_array[pool->num_of_threads]), worker_thr_routine, pool)) {
 			perror("pthread_create:");
 
 			yx_core_theadpool_destroy((yx_core_threadpool_ref*)(&pool), 0);
@@ -204,21 +210,9 @@ yx_int yx_core_thread_addTask(yx_core_threadpool_ref handle, void (*routine)(voi
 	}
     
     
-    /* return if queue is empty and !blocking */
-    if (!blocking  &&  yx_core_resource_queue_isEmpty(&(pool->free_tasks_queue)))
+    task = yx_tsmembucket_alloc(pool->freetask_bucket);
+    if (NULL == task)
         return -1;
-
-	/* Check if the free task queue is empty. */
-    int rt;
-	while ((rt = yx_core_resource_queue_get(&(pool->free_tasks_queue), (yx_value*)(&task), 5)) == ETIMEDOUT)
-    {
-        if (pool->stop_flag)
-            return -1;
-	}
-    
-    if (0 != rt)
-        return -1;
-
     
 	task->data = data;
 	task->routine_cb = routine;
@@ -233,21 +227,8 @@ yx_int yx_core_thread_addTask(yx_core_threadpool_ref handle, void (*routine)(voi
 void yx_core_theadpool_destroy(yx_core_threadpool_ref* handleRef, yx_int blocking)
 {
     threadpoolRef pool = yx_core_threadpool_refHandle2Impl(*handleRef);
-    
-	pthread_t thr;
-
-	if (blocking) {
-		stop_worker_thr_routines_cb(pool);
-	}
-	else {
-        /*create a new thread used to recycle the pool thread*/
-		if (pthread_create(&thr,NULL,stop_worker_thr_routines_cb,pool)) {
-			perror("pthread_create: ");
-			REPORT_ERROR("Warning! will not be able to free memory allocation. This will cause a memory leak.");
-		}
-        
-        pthread_detach(thr);
-	}
-    
     *handleRef = NULL;
+    
+	stop_worker_thr_routines_cb(pool, blocking);
+    
 }

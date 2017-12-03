@@ -9,9 +9,9 @@
 #include "yx_core_rbtree.h"
 
 #include "../rttidef/yx_core_rttidef.h"
-#include "../allocator/yx_core_mempool_cell.h"
+#include "../allocator/yx_core_membucket.h"
 #include "../debug/yx_core_assert.h"
-#include "../allocator/yx_core_mempool_buf.h"
+#include "../allocator/yx_core_memsection.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -57,9 +57,9 @@ void yx_core_rbtree_init(yx_allocator allocator, yx_core_rbtree_ref tree)
     tree->allocator = allocator;
     
     /*setup the node allocator*/
-    yx_os_rtti_if(allocator, yx_rtti_allocator_buf) {
+    yx_os_rtti_if(allocator, yx_rtti_allocator_memsection) {
         /*因为是bufpool, 所以这个cellMempool不会被释放*/
-        tree->node_allocator = yx_cellMempool_create(allocator, sizeof(struct yx_core_rbnode_wrapper));
+        tree->node_allocator = yx_membucket_create(allocator, sizeof(struct yx_core_rbnode_wrapper));
     }
     else {
         tree->node_allocator = allocator;
@@ -209,7 +209,7 @@ void yx_core_rbtree_breadthFirstTraversal(const yx_core_rbtree_ref rbtree, yx_va
     if (NULL == traversal_callback)
         return;
     
-    yx_allocator bufAllocator = yx_bufMempool_create_std();
+    yx_allocator bufAllocator = yx_memsection_create_std();
     
     /*init hte queue*/
     struct yx_core_queue queue;
@@ -246,7 +246,7 @@ void yx_core_rbtree_breadthFirstTraversal(const yx_core_rbtree_ref rbtree, yx_va
     //buffPool 不用回收
     //yx_core_queue_recycle(&queue);
     
-    yx_bufMempool_destroy(&bufAllocator);
+    yx_memsection_destroy(&bufAllocator);
 }
 
 void yx_core_rbtree_inorderTraversal(const yx_core_rbtree_ref rbtree, yx_value bindingData, void (*traversal_callback)(yx_value key, yx_value data, yx_value bindingData))
@@ -522,7 +522,7 @@ void yx_core_rbtree_traversal_cursor_init(const yx_core_rbtree_ref rbtree, yx_co
     YX_ASSERT(NULL != cursor);
     
     
-    cursor->bufAllocator = yx_bufMempool_create(rbtree->allocator, YX_BUFPOOL_STD_BUFFLEN);
+    cursor->bufAllocator = yx_memsection_create(rbtree->allocator, YX_MEMSECTION_BUFFLEN);
     
     yx_core_queue_init(cursor->bufAllocator, &(cursor->queue));
     
@@ -546,7 +546,7 @@ void yx_core_rbtree_traversal_cursor_recycle(yx_core_rbtree_breadth_cursor* curs
     //bufPool 不用回收
     //yx_core_queue_recycle(&(cursor->queue));
     
-    yx_bufMempool_destroy(&(cursor->bufAllocator));
+    yx_memsection_destroy(&(cursor->bufAllocator));
     
 #if YX_DEBUG
     cursor->bufAllocator = NULL;

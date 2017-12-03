@@ -11,7 +11,7 @@
 #define _YX_MACOSX_SPINLOCK_H_
 
 #include "yx_macosx_spinlock_base.h"
-#include "yx_macosx_atomic.h"
+#include "../atomic/yx_macosx_atomic.h"
 
 typedef union yx_os_spinlock yx_os_spinlock;
 

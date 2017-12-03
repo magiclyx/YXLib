@@ -8,7 +8,7 @@
 
 #include "yx_core_queue.h"
 #include "../rttidef/yx_core_rttidef.h"
-#include "../allocator/yx_core_mempool_cell.h"
+#include "../allocator/yx_core_membucket.h"
 #include "../debug/yx_core_assert.h"
 
 
@@ -37,9 +37,9 @@ void yx_core_queue_init(yx_allocator allocator, yx_core_queue_ptr queue)
     queue->allocator = allocator;
     
     /*setup the node allocator*/
-    yx_os_rtti_if(allocator, yx_rtti_allocator_buf) {
+    yx_os_rtti_if(allocator, yx_rtti_allocator_memsection) {
         /*因为是bufpool, 所以这个cellMempool不会被释放*/
-        queue->node_allocator = yx_cellMempool_create(allocator, sizeof(struct yx_core_queuenode_wrapper));
+        queue->node_allocator = yx_membucket_create(allocator, sizeof(struct yx_core_queuenode_wrapper));
     }
     else {
         queue->node_allocator = allocator;
@@ -72,7 +72,7 @@ void yx_core_queue_destroy(yx_core_queue_ptr* queue_ptr)
 
 void yx_core_queue_recycle(yx_core_queue_ptr queue)
 {
-    yx_os_rtti_notif(queue->allocator, yx_rtti_allocator_buf)
+    yx_os_rtti_notif(queue->allocator, yx_rtti_allocator_memsection)
     {
         const yx_ulong count = queue->count;
         

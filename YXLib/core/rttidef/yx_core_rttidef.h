@@ -25,9 +25,12 @@
 /*mempool (offset 10 - 20)*/
 #define  yx_rtti_allocator_basic       (yx_rtti_core_offset(10)) //basic memory pool
 #define  yx_rtti_allocator_debug       (yx_rtti_core_offset(11)) //debug memory pool
-#define  yx_rtti_allocator_buf         (yx_rtti_core_offset(12)) //buffer mempory pool
-#define  yx_rtti_allocator_cell        (yx_rtti_core_offset(13)) //cell mempory pool
+#define  yx_rtti_allocator_memsection         (yx_rtti_core_offset(12)) //memsecion
+#define  yx_rtti_allocator_membucket        (yx_rtti_core_offset(13)) //membucket
 #define  yx_rtti_allocator_thread      (yx_rtti_core_offset(14)) //thread mempory pool
+
+#define  yx_rtti_allocator_ts_memsection  (yx_rtti_core_offset(16)) //thread safe memsection
+#define  yx_rtti_allocator_ts_membucket   (yx_rtti_core_offset(17)) //thread safe membucket
 
 
 /*container (offset 30 - 70)*/
